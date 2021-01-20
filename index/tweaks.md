@@ -39,6 +39,7 @@ echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" |
 ```
 
   
-  
-[_<< Back_](/README.md)  
-[_(Package installation) Next >>_](/index/package-installation.md)
+--------------------------------------------------------------------- 
+  [_[Main list]_](/README.md)  
+[_<< Previous (tweaks)_](/index/tweaks.md)  
+[_(Package installation) Next >>_](/index/package-installation.md)  
