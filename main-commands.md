@@ -1,18 +1,18 @@
 
-# #-----------------[ changing swappiness ]-----------------#
+# changing swappiness
 ```
 echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
 ```
-	
-# #-----------------[ limit journal entry ]-----------------#
+
+
+# limit journal entry
 ```
 sudo journalctl --vacuum-time=31days
 ```
 
-# #--------------[ advanced cp and mv ]---------------#
 
-### source: https://github.com/jarun/advcpmv 
-
+# advanced cp and mv
+source: https://github.com/jarun/advcpmv 
 
 ### building
 ```
@@ -39,7 +39,9 @@ sudo cp ./src/cp /usr/local/bin/copy && sudo cp ./src/mv /usr/local/bin/move
 echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" | tee -a .aliases
 ```
 
-# #-----------------[ fix-system-time ]-----------------#
+
+# fix-system-time
+_If faced time change problem when dual booting with windows_ 
 ```
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
@@ -49,18 +51,20 @@ timedatectl set-local-rtc 0 --adjust-system-clock
 ```
 
 
-# #-----------------[ bd-mirrors ]-----------------#
+
+# bd-mirrors
 
 ### ubuntu
 ```
-export CODENAME=$(lsb_release -c | cut -f2) &&\
+export CODENAME=$(lsb_release -c | cut -f2)
 echo -e "deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME main restricted universe multiverse \ndeb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-updates main restricted universe multiverse \ndeb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-backports main restricted universe multiverse \ndeb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-security main restricted universe multiverse" | sudo tee /etc/apt/sources.list.d/bd_mirrors.list
 ```
 ### update apt database:
 `sudo apt update && sudo apt upgrade`
 
 
-# #-----------------[ package-installation ]-----------------#
+
+# package-installation
 
 `sudo apt update && sudo apt upgrade -y`
 
@@ -86,12 +90,13 @@ sudo apt-get install mc htop inxi neofetch whois ffmpeg vnstat iftop tasksel vsf
 sudo apt-get install figlet boxes cmatrix toilet fortune-mod fortunes fortune-min fortune-off xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra sl cowsay lolcat
 ```
 
-# #-----------------[ apt-fast ]-----------------#
 
-### if add-apt-repository is unavailable:
+# apt-fast
+
+_if add-apt-repository is unavailable:_
 `sudo apt-get install software-properties-common`
 
-### then:
+### install:
 ```
 sudo add-apt-repository ppa:apt-fast/stable
 sudo apt-get update
@@ -102,7 +107,8 @@ sudo apt-get -y install apt-fast
 /bin/bash -c "$(curl -sL https://git.io/vokNn)"
 ```
 
-# #-----------------[ oh-my-zsh ]-----------------#
+
+# oh-my-zsh
 
 ### packages needed:
 `zsh curl git`
@@ -133,7 +139,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo -e "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \nZSH_AUTOSUGGEST_STRATEGY=(history completion) \nZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> .zshrc
 ```
 ### alias file 
-* create a `~/.aliases` file first if not created already *
+_create a_ `~/.aliases` _file first if not created already_
 ```
 echo -e "\nsource \$HOME/.aliases\n" | tee -a ~/.zshrc
 ```
@@ -142,7 +148,8 @@ echo -e "\nsource \$HOME/.aliases\n" | tee -a ~/.zshrc
 echo -e "\nexport PATH=\"\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
 ```
 
-# #-----------------[ colorls ]-----------------#
+
+# colorls
 ```
 sudo apt install -y ruby-dev
 sudo gem install colorls
