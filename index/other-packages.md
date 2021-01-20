@@ -1,5 +1,5 @@
 ## * youtube-dl
-###### youtube downloader
+###### (youtube downloader)
   
 #### direct installation
 ```zsh
@@ -26,7 +26,7 @@ sudo apt-get install speedtest
 
 
 ## * subliminal
-###### subtitle downloader
+###### (subtitle downloader)
 
 #### depends on `python python3-pip python-setuptools python3-setuptools python-wheel-common`
 
@@ -50,7 +50,7 @@ sudo apt install brave-browser
 
 
 ## persepolis
-###### Download manager
+###### (Download manager)
 ```zsh
 sudo add-apt-repository ppa:persepolis/ppa
 sudo apt update
@@ -60,7 +60,7 @@ sudo apt install -y persepolis
 
 
 ## clementine
-###### Music player
+###### (Music player)
 ```zsh
 sudo add-apt-repository ppa:me-davidsansome/clementine
 sudo apt-get update
@@ -70,7 +70,7 @@ sudo apt-get install clementine
 
 
 ## discord
-###### Online chat and call client
+###### (Online chat and communication client)
 ```zsh
 qapt-deb-installer $(wget -c -O discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb)
 ```
@@ -78,7 +78,7 @@ qapt-deb-installer $(wget -c -O discord.deb https://discord.com/api/download\?pl
 
 
 ## spotify
-###### Music streaming
+###### (Music streaming client)
 ```zsh
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key --keyring /etc/apt/trusted.gpg.d/spotify.gpg add -
 echo "deb [trusted=yes] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -88,7 +88,7 @@ sudo apt-get update && sudo apt-get install -y spotify-client
 
 
 ## freetuxtv
-###### live tv
+###### (live tv)
 ```zsh
 sudo add-apt-repository ppa:freetuxtv/freetuxtv-dev
 sudo apt update && sudo apt install -y freetuxtv
@@ -97,7 +97,7 @@ sudo apt update && sudo apt install -y freetuxtv
 
 
 ## smplayer
-###### video player
+###### (powerful video player)
 ```zsh
 sudo add-apt-repository ppa:rvm/smplayer
 sudo apt-get update
@@ -107,7 +107,7 @@ sudo apt-get install smplayer smplayer-themes smplayer-skins
 
 
 ## anydesk
-###### remote desktop sharing and control
+###### (remote desktop sharing and control)
 ```zsh
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
 echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
