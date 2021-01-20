@@ -41,5 +41,5 @@ echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" |
   
 --------------------------------------------------------------------- 
   [_[Main list]_](/README.md)  
-[_<< Previous (tweaks)_](/index/tweaks.md)  
+[_<< Previous (Basic commands)_](/index/basic-commands.md)  
 [_(Package installation) Next >>_](/index/package-installation.md)  
