@@ -1,5 +1,5 @@
 ## quick-setup for newly installed linux desktop environment
-###### mainly created for myself to save some time after installing a new distro
+ `(created mainly for myself to save some time after installing a new distro)`
 
 ---------------------------------------------------------------
 Contents:
