@@ -116,4 +116,6 @@ apt update && apt install -y anydesk
   
    
    
-   _[<< Back](/README.md)_
+--------------------------------------------------------------------- 
+  [_[Main list]_](/README.md)  
+[_<<Previous (Package installation)_](/index/package-installation.md)  
