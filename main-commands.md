@@ -1,5 +1,5 @@
 
-## * changing swappiness:
+## [*] changing swappiness:
 ```zsh
 echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
 ```
