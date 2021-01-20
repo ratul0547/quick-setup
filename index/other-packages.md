@@ -1,16 +1,19 @@
-## youtube-dl
+## * youtube-dl
+###### youtube downloader
+  
+#### direct installation
 ```zsh
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 sudo chmod a+rx /usr/local/bin/youtube-dl
 ```
-## or
+#### or, via pip
 ```zsh
 sudo pip install --upgrade youtube_dl
 ```
 
 
 
-## speedtest-cli
+## * speedtest-cli
 ```zsh
 sudo apt-get install gnupg1 apt-transport-https dirmngr
 export INSTALL_KEY=379CE192D401AB61
@@ -22,12 +25,12 @@ sudo apt-get install speedtest
 
 
 
-## subliminal
+## * subliminal
+###### subtitle downloader
 
-## dependencies
-###### depends on `python python3-pip python-setuptools python3-setuptools python-wheel-common`
+#### depends on `python python3-pip python-setuptools python3-setuptools python-wheel-common`
 
-## installation
+#### installation
 ```zsh
 sudo pip install subliminal
 echo "alias subltitle='subliminal download -l en ./' " | tee -a .aliases
@@ -47,6 +50,7 @@ sudo apt install brave-browser
 
 
 ## persepolis
+###### Download manager
 ```zsh
 sudo add-apt-repository ppa:persepolis/ppa
 sudo apt update
@@ -56,6 +60,7 @@ sudo apt install -y persepolis
 
 
 ## clementine
+###### Music player
 ```zsh
 sudo add-apt-repository ppa:me-davidsansome/clementine
 sudo apt-get update
@@ -65,6 +70,7 @@ sudo apt-get install clementine
 
 
 ## discord
+###### Online chat and call client
 ```zsh
 qapt-deb-installer $(wget -c -O discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb)
 ```
@@ -72,6 +78,7 @@ qapt-deb-installer $(wget -c -O discord.deb https://discord.com/api/download\?pl
 
 
 ## spotify
+###### Music streaming
 ```zsh
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key --keyring /etc/apt/trusted.gpg.d/spotify.gpg add -
 echo "deb [trusted=yes] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
@@ -81,6 +88,7 @@ sudo apt-get update && sudo apt-get install -y spotify-client
 
 
 ## freetuxtv
+###### live tv
 ```zsh
 sudo add-apt-repository ppa:freetuxtv/freetuxtv-dev
 sudo apt update && sudo apt install -y freetuxtv
@@ -89,6 +97,7 @@ sudo apt update && sudo apt install -y freetuxtv
 
 
 ## smplayer
+###### video player
 ```zsh
 sudo add-apt-repository ppa:rvm/smplayer
 sudo apt-get update
@@ -98,6 +107,7 @@ sudo apt-get install smplayer smplayer-themes smplayer-skins
 
 
 ## anydesk
+###### remote desktop sharing and control
 ```zsh
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
 echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
