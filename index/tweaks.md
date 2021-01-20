@@ -32,7 +32,7 @@ make
 ```
   
   
-#### putting files to $PATH
+#### putt files to proper $PATH
 ```zsh
 sudo cp ./src/cp /usr/local/bin/copy && sudo cp ./src/mv /usr/local/bin/move
 ```
