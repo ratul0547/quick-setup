@@ -95,5 +95,6 @@ sudo gem install colorls
 
   
  
-[_<< Back_](/README.md)  
+--------------------------------------------------------------------- 
+  [_[Main list]_](/README.md)  
 [_(tweaks) next >>_](/index/tweaks.md)
