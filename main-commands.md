@@ -45,7 +45,7 @@ echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" |
   
   
 ## fix-system-time:
-_If faced time change problem when dual booting with windows_ 
+###### If faced time change problem when dual booting with windows
 ```zsh
 timedatectl set-local-rtc 1 --adjust-system-clock
 ```
@@ -97,7 +97,7 @@ sudo apt-get install figlet boxes cmatrix toilet fortune-mod fortunes fortune-mi
   
 ## apt-fast:
 
-_if add-apt-repository is unavailable:_
+###### if add-apt-repository is unavailable: 
 `sudo apt-get install software-properties-common`
 
 #### install:
@@ -143,7 +143,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo -e "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \nZSH_AUTOSUGGEST_STRATEGY=(history completion) \nZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> .zshrc
 ```
 #### alias file 
-_create a_ `~/.aliases` _file first if not created already_
+###### create a_ `~/.aliases` _file first if not created already_
 ```zsh
 echo -e "\nsource \$HOME/.aliases\n" | tee -a ~/.zshrc
 ```
