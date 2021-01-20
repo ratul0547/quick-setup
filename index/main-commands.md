@@ -117,9 +117,9 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo -e "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \nZSH_AUTOSUGGEST_STRATEGY=(history completion) \nZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> .zshrc
 ```
 #### adding plugins
-
+```zsh
 sed -i "s/plugins=(git)/plugins=(git extract adb sudo history safe-paste python pip colored-man-pages colorize web-search zsh-syntax-highlighting zsh-autosuggestions)/gi" ~/.zshrc
-
+```
 #### alias file 
 ###### _create a_ `~/.aliases` _file first if not created already_
 ```zsh
