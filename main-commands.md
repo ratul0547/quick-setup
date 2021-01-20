@@ -1,18 +1,18 @@
 
-## changing swappiness:
+## * changing swappiness:
 ```zsh
 echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
 ```
   
   
-## limit journal entry:
+## * limit journal entry:
 ```zsh
 sudo journalctl --vacuum-time=31days
 ```
 
   
   
-## advanced cp and mv:
+## * advanced cp and mv:
 source: https://github.com/jarun/advcpmv 
 
 #### building
@@ -44,7 +44,7 @@ echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" |
 
   
   
-## fix-system-time:
+## * fix-system-time:
 ###### If faced time change problem when dual booting with windows
 ```zsh
 timedatectl set-local-rtc 1 --adjust-system-clock
@@ -56,7 +56,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
 
   
   
-## bd-mirrors:
+## * bd-mirrors:
 
 #### ubuntu
 ```zsh
@@ -68,7 +68,7 @@ echo -e "deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME main restricted 
 
   
   
-## apt-fast:
+## * apt-fast:
 
 ###### if add-apt-repository is unavailable: 
 `sudo apt-get install software-properties-common`
@@ -85,7 +85,7 @@ sudo apt-get -y install apt-fast
 ```
   
   
-## oh-my-zsh:
+## * oh-my-zsh:
 
 #### packages needed:
 `zsh curl git`
@@ -130,7 +130,7 @@ echo -e "\nexport PATH=\"\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
 ```
   
   
-## colorls:
+## * colorls:
 ```zsh
 sudo apt install -y ruby-dev
 sudo gem install colorls
