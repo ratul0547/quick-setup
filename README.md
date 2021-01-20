@@ -3,4 +3,4 @@
 * [Package installation](index/package-installation.md)
 * [Installing Other packages](index/other-packages.md)
 * [tweaks](index/tweaks.md)
-* [configurations](index/configs.md)
+* [files](files/)
