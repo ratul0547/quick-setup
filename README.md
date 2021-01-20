@@ -1,1 +1,1 @@
-# quick-setup
+quick-setup for newly installed linux desktop environment
