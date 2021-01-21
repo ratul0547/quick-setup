@@ -28,7 +28,7 @@ sudo apt-get install speedtest
 ## * subliminal
 ###### (subtitle downloader)
 
-#### depends on `python python3-pip python-setuptools python3-setuptools python-wheel-common`
+depends on: `python python3-pip python-setuptools python3-setuptools python-wheel-common`
 
 #### installation
 ```sh
