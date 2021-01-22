@@ -24,7 +24,8 @@ muon krfb redshift filelight latte-dock
 ```
 #### cli_tools:
 ```sh
-sudo apt-get install mc htop inxi neofetch whois ffmpeg vnstat iftop tasksel vsftpd elinks rtorrent fim aptitude cmus bat screen byobu
+sudo apt-get install mc ffmpeg elinks rtorrent cmus screen vsftpd \
+htop inxi neofetch whois vnstat iftop bat fim
 ```
 #### fun commands:
 ```sh
