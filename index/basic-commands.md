@@ -87,7 +87,17 @@ echo -e "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \nZSH_AUTOSUGGEST_STRATEGY
 ```
 #### adding plugins
 ```sh
-sed -i "s/plugins=(git)/plugins=(git extract adb sudo history safe-paste python pip colored-man-pages colorize web-search zsh-syntax-highlighting zsh-autosuggestions)/gi" ~/.zshrc
+sed -i "s/plugins=(git)/plugins=(git \n\
+extract \n\
+adb \n\
+sudo \n\
+history \n\
+safe-paste \n\
+python pip \n\
+colored-man-pages \n\
+colorize web-search \n\
+zsh-syntax-highlighting \n\
+zsh-autosuggestions)/gi" ~/.zshrc
 ```
 #### alias file 
 ###### _create a_ `~/.aliases` _file first if not created already_
