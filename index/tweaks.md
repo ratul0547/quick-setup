@@ -16,15 +16,25 @@ sudo journalctl --vacuum-time=31days
 ---------------------------------------------------------------------  
   
 ## * advanced cp and mv:
-source: https://github.com/jarun/advcpmv 
+_source: https://github.com/jarun/advcpmv_
 
 #### building
 ```sh
 wget http://ftp.gnu.org/gnu/coreutils/coreutils-8.32.tar.xz
+```
+```sh
 tar xvJf coreutils-8.32.tar.xz && cd coreutils-8.32/
+```
+```sh
 wget https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-0.8-8.32.patch
+```
+```sh
 patch -p1 -i advcpmv-0.8-8.32.patch
+```
+```sh
 ./configure
+```
+```sh
 make
 ```
   
@@ -43,5 +53,5 @@ echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" |
 ---------------------------------------------------------------------  
 
   [_[Main list]_](../README.md)  
-[_<< Previous (Basic commands)_](basic-commands.md)  
-[_(Package installation) Next >>_](package-installation.md)  
+[_<< **Previous** (Basic commands)_](basic-commands.md)  
+[_(Package installation) **Next** >>_](package-installation.md)  
