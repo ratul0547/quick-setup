@@ -63,7 +63,7 @@ sudo apt-get -y install apt-fast
 ## * oh-my-zsh:
 
 #### packages needed:
-`zsh curl git`
+`zsh` ` curl` ` git`
 
 #### installing oh-my-zsh
 ```sh
