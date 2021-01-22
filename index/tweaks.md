@@ -28,12 +28,10 @@ patch -p1 -i advcpmv-0.8-8.32.patch
 make
 ```
   
-  
 #### put files to proper $PATH
 ```sh
 sudo cp ./src/cp /usr/local/bin/copy && sudo cp ./src/mv /usr/local/bin/move
 ```
-  
   
 #### set alias
 ```sh

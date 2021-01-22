@@ -24,8 +24,8 @@ sudo apt-get install mc htop inxi neofetch whois ffmpeg vnstat iftop tasksel vsf
 sudo apt-get install figlet boxes cmatrix toilet fortune-mod fortunes fortune-min fortune-off xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra sl cowsay lolcat
 ```
   
-  
----------------------------------------------------------------------  
+ 
+--------------------------------------------------------------------- 
 --------------------------------------------------------------------- 
   [_[Main list]_](../README.md)  
 [_<< Previous (tweaks)_](tweaks.md)  
