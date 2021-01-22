@@ -17,7 +17,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
 
 #### ubuntu
 
-_copy all_:
+_Paste all in terminal_:
 ```sh
 export CODENAME=$(lsb_release -c | cut -f2);
 echo -e "\
@@ -43,7 +43,10 @@ deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-security main restricted 
 #### install:
 ```sh
 sudo add-apt-repository ppa:apt-fast/stable
+``` ```sh
 sudo apt-get update
+
+``` ```sh
 sudo apt-get -y install apt-fast
 ```
 #### or, quick install:
@@ -83,7 +86,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 ```
 #### autosuggestions-config
 ```sh
-echo -e "ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \nZSH_AUTOSUGGEST_STRATEGY=(history completion) \nZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> .zshrc
+echo -e "\
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \n\
+ZSH_AUTOSUGGEST_STRATEGY=(history completion) \n\
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> .zshrc
 ```
 #### adding plugins
 ```sh
@@ -116,6 +122,8 @@ echo -e "\nexport PATH=\"\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
 ## * colorls:
 ```sh
 sudo apt install -y ruby-dev
+``` 
+```sh
 sudo gem install colorls
 ```
 
