@@ -43,10 +43,12 @@ deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-security main restricted 
 #### install:
 ```sh
 sudo add-apt-repository ppa:apt-fast/stable
-``` ```sh
+``` 
+```sh
 sudo apt-get update
 
-``` ```sh
+``` 
+```sh
 sudo apt-get -y install apt-fast
 ```
 #### or, quick install:
