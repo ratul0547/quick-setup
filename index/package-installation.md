@@ -41,4 +41,4 @@ xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
 --------------------------------------------------------------------- 
   [_[Main list]_](../README.md)  
 [*<< __Previous__ (tweaks)*](tweaks.md)  
-[*(Other packages) __Next>>__ *](other-packages.md)  
+[*(Other packages) __Next>>__*](other-packages.md)  
