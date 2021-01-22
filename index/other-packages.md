@@ -28,7 +28,8 @@ export INSTALL_KEY=379CE192D401AB61
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
 ```
 ```sh
-echo "deb https://ookla.bintray.com/debian generic main" | sudo tee  /etc/apt/sources.list.d/speedtest.list
+echo "deb https://ookla.bintray.com/debian generic main" \
+| sudo tee  /etc/apt/sources.list.d/speedtest.list
 ```
 ```sh
 sudo apt-get update
@@ -44,11 +45,11 @@ sudo apt-get install speedtest
 ## * subliminal
 ###### (subtitle downloader)
 
-depends on: `python python3-pip python-setuptools python3-setuptools python-wheel-common`
+depends on: `python` `python3-pip` `python-setuptools` `python3-setuptools` `python-wheel-common`
 
 #### installation
 ```sh
-sudo pip install subliminal
+pip install subliminal
 ```
 ```sh
 echo "alias subltitle='subliminal download -l en ./' " | tee -a .aliases
@@ -63,10 +64,12 @@ echo "alias subltitle='subliminal download -l en ./' " | tee -a .aliases
 sudo apt install apt-transport-https curl gnupg
 ```
 ```sh
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
+curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc \
+| sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
 ```
 ```sh
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
+echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" \
+| sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 ```
 ```sh
 sudo apt update
@@ -114,7 +117,8 @@ sudo apt-get install clementine
 ## * discord
 ###### (Online chat and communication client)
 ```sh
-qapt-deb-installer $(wget -c -O discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb)
+wget -c -O discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb;
+qapt-deb-installer discord.deb
 ```
 
 
@@ -124,10 +128,12 @@ qapt-deb-installer $(wget -c -O discord.deb https://discord.com/api/download\?pl
 ## * spotify
 ###### (Music streaming client)
 ```sh
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key --keyring /etc/apt/trusted.gpg.d/spotify.gpg add -
+curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg \
+| sudo apt-key --keyring /etc/apt/trusted.gpg.d/spotify.gpg add -
 ```
 ```sh
-echo "deb [trusted=yes] http://repository.spotify.com stable non-free" | sudo tee /etc/apt/sources.list.d/spotify.list
+echo "deb [trusted=yes] http://repository.spotify.com stable non-free" \
+| sudo tee /etc/apt/sources.list.d/spotify.list
 ```
 ```sh
 sudo apt-get update && sudo apt-get install -y spotify-client
@@ -171,7 +177,8 @@ sudo apt-get install smplayer smplayer-themes smplayer-skins
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
 ```
 ```sh
-echo "deb http://deb.anydesk.com/ all main" | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
+echo "deb http://deb.anydesk.com/ all main" \
+| sudo tee /etc/apt/sources.list.d/anydesk-stable.list
 ```
 ```sh
 apt update && apt install -y anydesk
