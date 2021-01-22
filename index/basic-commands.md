@@ -18,8 +18,13 @@ timedatectl set-local-rtc 0 --adjust-system-clock
 #### ubuntu
 ```sh
 export CODENAME=$(lsb_release -c | cut -f2)
-echo -e "deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME main restricted universe multiverse \ndeb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-updates main restricted universe multiverse \ndeb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-backports main restricted universe multiverse \ndeb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-security main restricted universe multiverse" | sudo tee /etc/apt/sources.list.d/bd_mirrors.list
+echo -e "\
+deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME main restricted universe multiverse \n\
+deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-updates main restricted universe multiverse \n\
+deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-backports main restricted universe multiverse \n\
+deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-security main restricted universe multiverse" 
 ```
+
 #### update apt database:
 `sudo apt update && sudo apt upgrade`
 
