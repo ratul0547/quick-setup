@@ -117,7 +117,7 @@ sudo apt-get install clementine
 ## * discord
 ###### (Online chat and communication client)
 ```sh
-wget -c -O discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb;
+wget -c -O discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb && \
 qapt-deb-installer discord.deb
 ```
 
