@@ -48,6 +48,19 @@ sudo cp ./src/cp /usr/local/bin/copy && sudo cp ./src/mv /usr/local/bin/move
 echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" | tee -a .aliases
 ```
 
+
+  
+---------------------------------------------------------------------  
+
+## * colored ls:
+```sh
+sudo apt install -y ruby-dev
+``` 
+```sh
+sudo gem install colorls
+```
+
+
   
 ---------------------------------------------------------------------  
 ---------------------------------------------------------------------  
