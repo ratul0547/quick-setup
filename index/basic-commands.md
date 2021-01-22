@@ -116,20 +116,6 @@ echo -e "\nsource \$HOME/.aliases\n" | tee -a ~/.zshrc
 ```sh
 echo -e "\nexport PATH=\"\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
 ```
-  
-  
-  
----------------------------------------------------------------------  
-
-## * colorls:
-```sh
-sudo apt install -y ruby-dev
-``` 
-```sh
-sudo gem install colorls
-```
-
-
 
   
  
