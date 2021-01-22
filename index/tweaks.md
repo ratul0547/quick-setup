@@ -5,6 +5,7 @@ echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
 ```
   
   
+---------------------------------------------------------------------  
   
 ## * limit journal entry:
 ```sh
@@ -12,6 +13,7 @@ sudo journalctl --vacuum-time=31days
 ```
 
   
+---------------------------------------------------------------------  
   
 ## * advanced cp and mv:
 source: https://github.com/jarun/advcpmv 
@@ -39,7 +41,9 @@ echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" |
 ```
 
   
---------------------------------------------------------------------- 
-  [_[Main list]_](/README.md)  
-[_<< Previous (Basic commands)_](/index/basic-commands.md)  
-[_(Package installation) Next >>_](/index/package-installation.md)  
+---------------------------------------------------------------------  
+---------------------------------------------------------------------  
+
+  [_[Main list]_](../README.md)  
+[_<< Previous (Basic commands)_](basic-commands.md)  
+[_(Package installation) Next >>_](package-installation.md)  

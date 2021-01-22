@@ -13,6 +13,8 @@ sudo pip install --upgrade youtube_dl
 
 
 
+---------------------------------------------------------------------  
+
 ## * speedtest-cli
 ```sh
 sudo apt-get install gnupg1 apt-transport-https dirmngr
@@ -24,6 +26,8 @@ sudo apt-get install speedtest
 ```
 
 
+
+---------------------------------------------------------------------  
 
 ## * subliminal
 ###### (subtitle downloader)
@@ -38,7 +42,9 @@ echo "alias subltitle='subliminal download -l en ./' " | tee -a .aliases
 
 
 
-## brave-browser
+---------------------------------------------------------------------  
+
+## * brave-browser
 ```sh
 sudo apt install apt-transport-https curl gnupg
 curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc | sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
@@ -49,7 +55,9 @@ sudo apt install brave-browser
 
 
 
-## persepolis
+---------------------------------------------------------------------  
+
+## * persepolis
 ###### (Download manager)
 ```sh
 sudo add-apt-repository ppa:persepolis/ppa
@@ -59,7 +67,9 @@ sudo apt install -y persepolis
 
 
 
-## clementine
+---------------------------------------------------------------------  
+
+## * clementine
 ###### (Music player)
 ```sh
 sudo add-apt-repository ppa:me-davidsansome/clementine
@@ -69,7 +79,9 @@ sudo apt-get install clementine
 
 
 
-## discord
+---------------------------------------------------------------------  
+
+## * discord
 ###### (Online chat and communication client)
 ```sh
 qapt-deb-installer $(wget -c -O discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb)
@@ -77,7 +89,9 @@ qapt-deb-installer $(wget -c -O discord.deb https://discord.com/api/download\?pl
 
 
 
-## spotify
+---------------------------------------------------------------------  
+
+## * spotify
 ###### (Music streaming client)
 ```sh
 curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg | sudo apt-key --keyring /etc/apt/trusted.gpg.d/spotify.gpg add -
@@ -87,7 +101,9 @@ sudo apt-get update && sudo apt-get install -y spotify-client
 
 
 
-## freetuxtv
+---------------------------------------------------------------------  
+
+## * freetuxtv
 ###### (live tv)
 ```sh
 sudo add-apt-repository ppa:freetuxtv/freetuxtv-dev
@@ -95,8 +111,9 @@ sudo apt update && sudo apt install -y freetuxtv
 ```
 
 
+---------------------------------------------------------------------  
 
-## smplayer
+## * smplayer
 ###### (powerful video player)
 ```sh
 sudo add-apt-repository ppa:rvm/smplayer
@@ -106,7 +123,9 @@ sudo apt-get install smplayer smplayer-themes smplayer-skins
 
 
 
-## anydesk
+---------------------------------------------------------------------  
+
+## * anydesk
 ###### (remote desktop sharing and control)
 ```sh
 wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
@@ -116,6 +135,7 @@ apt update && apt install -y anydesk
   
    
    
+---------------------------------------------------------------------  
 --------------------------------------------------------------------- 
-  [_[Main list]_](/README.md)  
-[_<<Previous (Package installation)_](/index/package-installation.md)  
+  [_[Main list]_](../README.md)  
+[_<<Previous (Package installation)_](package-installation.md)  

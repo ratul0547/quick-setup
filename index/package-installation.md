@@ -25,7 +25,8 @@ sudo apt-get install figlet boxes cmatrix toilet fortune-mod fortunes fortune-mi
 ```
   
   
+---------------------------------------------------------------------  
 --------------------------------------------------------------------- 
-  [_[Main list]_](/README.md)  
-[_<< Previous (tweaks)_](/index/tweaks.md)  
-[_(Other packages) Next>>_](/index/other-packages.md)  
+  [_[Main list]_](../README.md)  
+[_<< Previous (tweaks)_](tweaks.md)  
+[_(Other packages) Next>>_](other-packages.md)  

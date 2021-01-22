@@ -9,7 +9,9 @@ timedatectl set-local-rtc 1 --adjust-system-clock
 timedatectl set-local-rtc 0 --adjust-system-clock
 ```
 
+
   
+---------------------------------------------------------------------  
   
 ## * bd-mirrors:
 
@@ -23,6 +25,8 @@ echo -e "deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME main restricted 
 
   
   
+---------------------------------------------------------------------  
+
 ## * apt-fast:
 
 ###### if add-apt-repository is unavailable: 
@@ -39,7 +43,10 @@ sudo apt-get -y install apt-fast
 /bin/bash -c "$(curl -sL https://git.io/vokNn)"
 ```
   
+
   
+---------------------------------------------------------------------  
+
 ## * oh-my-zsh:
 
 #### packages needed:
@@ -85,6 +92,9 @@ echo -e "\nexport PATH=\"\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
 ```
   
   
+  
+---------------------------------------------------------------------  
+
 ## * colorls:
 ```sh
 sudo apt install -y ruby-dev
@@ -95,6 +105,7 @@ sudo gem install colorls
 
   
  
+---------------------------------------------------------------------  
 --------------------------------------------------------------------- 
-  [_[Main list]_](/README.md)  
-[_(tweaks) next >>_](/index/tweaks.md)
+  [_[Main list]_](../README.md)  
+[_(tweaks) next >>_](tweaks.md)
