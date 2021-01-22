@@ -19,7 +19,7 @@ timedatectl set-local-rtc 0 --adjust-system-clock
 
 _Paste all in terminal_:
 ```sh
-export CODENAME=$(lsb_release -c | cut -f2);
+export CODENAME=$(lsb_release -c | cut -f2) && \
 echo -e "\
 deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME main restricted universe multiverse \n\
 deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-updates main restricted universe multiverse \n\
