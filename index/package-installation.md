@@ -30,7 +30,7 @@ htop inxi neofetch whois vnstat iftop bat fim
 #### fun commands:
 ```sh
 sudo apt-get install figlet boxes cmatrix toilet sl cowsay lolcat \
-fortune-mod fortunes fortune-min fortune-off \
+fortune-mod fortunes fortune-min fortune-off
 ```
 #### screensaver:
 ```sh
