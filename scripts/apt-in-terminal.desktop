@@ -1,0 +1,21 @@
+[Desktop Entry]
+Categories=System;
+Comment[en_US]=Install deb files in terminal with apt
+Comment=Install deb files in terminal with apt
+Exec=konsole --hold -e sudo apt install %f
+GenericName[en_US]=
+GenericName=
+Icon=application-x-deb
+MimeType=application/vnd.debian.binary-package;
+Name[en_US]=APT in terminal
+Name=APT in terminal
+Path=
+StartupNotify=true
+Terminal=false
+TerminalOptions=
+Type=Application
+X-DBUS-ServiceName=
+X-DBUS-StartupType=
+X-KDE-SubstituteUID=false
+X-KDE-Username=
+Hidden=False
