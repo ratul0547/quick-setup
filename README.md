@@ -279,7 +279,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 ```
 #### or, via pip
 ```sh
-sudo pip install --upgrade youtube_dl
+sudo pip3 install --upgrade youtube_dl
 ```
 
 
@@ -318,7 +318,7 @@ depends on: `python` `python3-pip` `python-setuptools` `python3-setuptools` `pyt
 
 #### installation
 ```sh
-pip install subliminal
+pip3 install subliminal
 ```
 ```sh
 echo "alias subltitle='subliminal download -l en ./' " | tee -a ~/.aliases
