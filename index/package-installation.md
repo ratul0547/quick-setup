@@ -14,9 +14,14 @@ flameshot kazam wine winetricks
 
 #### build essentials:
 ```sh
-sudo apt-get install build-essential dpkg-repack dkms make cmake checkinstall \
-python2 python3 python-pip python3-pip python-setuptools python3-setuptools python-wheel-common
+sudo apt-get install build-essential dpkg-repack dkms make cmake checkinstall
 ```
+
+#### python:
+```sh
+sudo apt-get install python2 python3 python3-pip python-setuptools python3-setuptools python-wheel-common
+```
+
 #### kde tools:
 ```sh
 sudo apt-get install qapt-deb-installer yakuake xdg-desktop-portal-gtk xdg-desktop-portal-kde \

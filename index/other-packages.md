@@ -52,7 +52,7 @@ depends on: `python` `python3-pip` `python-setuptools` `python3-setuptools` `pyt
 pip install subliminal
 ```
 ```sh
-echo "alias subltitle='subliminal download -l en ./' " | tee -a .aliases
+echo "alias subltitle='subliminal download -l en ./' " | tee -a ~/.aliases
 ```
 
 

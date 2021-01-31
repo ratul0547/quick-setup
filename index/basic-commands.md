@@ -76,7 +76,7 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 ```
 #### set theme
 ```sh
-sed -i "s/robbyrussell/powerlevel10k\/powerlevel10k/gi" .zshrc
+sed -i "s/robbyrussell/powerlevel10k\/powerlevel10k/gi" ~/.zshrc
 ```
 #### installing zsh-syntax-highlighting
 ```sh
@@ -91,7 +91,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo -e "\
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \n\
 ZSH_AUTOSUGGEST_STRATEGY=(history completion) \n\
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> .zshrc
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> ~/.zshrc
 ```
 #### adding plugins
 ```sh
@@ -101,7 +101,8 @@ adb \n\
 sudo \n\
 history \n\
 safe-paste \n\
-python pip \n\
+python \n\
+pip \n\
 colored-man-pages \n\
 colorize web-search \n\
 zsh-syntax-highlighting \n\
