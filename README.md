@@ -113,17 +113,18 @@ ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> ~/.zshrc
 ```
 #### adding plugins
 ```sh
-sed -i "s/plugins=(git)/plugins=(git \n\
-extract \n\
-adb \n\
-sudo \n\
-history \n\
-safe-paste \n\
-python \n\
-pip \n\
-colored-man-pages \n\
-colorize web-search \n\
-zsh-syntax-highlighting \n\
+sed -i "s/plugins=(git)/plugins=(git\n\
+extract\n\
+adb\n\
+sudo\n\
+history\n\
+safe-paste\n\
+python\n\
+pip\n\
+colored-man-pages\n\
+colorize\n\
+web-search\n\
+zsh-syntax-highlighting\n\
 zsh-autosuggestions)/gi" ~/.zshrc
 ```
 #### alias file 
@@ -230,7 +231,7 @@ flameshot kazam wine winetricks
 
 #### build essentials:
 ```sh
-sudo apt-get install build-essential dpkg-repack dkms make cmake checkinstall
+sudo apt-get install build-essential dpkg-repack dkms cmake checkinstall
 ```
 
 #### python:
@@ -270,20 +271,28 @@ xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
 ## * youtube-dl
 ###### (youtube downloader)
   
-#### direct installation
+#### via pip
+```sh
+pip3 install --upgrade youtube_dl
+```
+  
+#### or, direct installation
 ```sh
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 ```
 ```sh
 sudo chmod a+rx /usr/local/bin/youtube-dl
 ```
-#### or, via pip
+
+
+---------------------------------------------------------------------  
+## * lyrics-in-terminal
+
 ```sh
-sudo pip3 install --upgrade youtube_dl
+pip3 install lyrics-in-terminal
 ```
-
-
-
+  
+  
 ---------------------------------------------------------------------  
 
 ## * speedtest-cli
