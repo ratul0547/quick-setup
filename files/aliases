@@ -1,6 +1,5 @@
 
 ############ basic shortcuts ############
-alias rm='rm -i'
 alias update='sudo apt-get update && sudo apt-get upgrade'
 alias pkg='sudo apt-fast'
 alias open='xdg-open'
@@ -23,6 +22,7 @@ alias lc='colorls'
 alias l='colorls --sd'
 alias la='colorls -A --sd'
 alias ll='colorls -lA --sd'
+alias lt='colorls --sd --tree=2'
 
 ############ cd+ls together #############
 cdls() {cd "$@" && ls; }
@@ -31,20 +31,21 @@ cdls() {cd "$@" && ls; }
 cdl() {cd "$@" && colorls --sd; }
 cdla() {cd "$@" && colorls -A --sd; }
 cdll() {cd "$@" && colorls -lA --sd; }
+cdlt() {cd "$@" && colorls --sd --tree=2; }
 
 ########## speedtest shortcuts ##########
 alias speedtest='speedtest -A'
 alias pingtest='ping -c 20 -i .2 8.8.8.8'
 alias pingtest2='sudo ping -fc 1000 8.8.8.8'
 
-######## subliminal shortcuts ###########
-alias subtitle='subliminal download -l en .'
-
 ######## youtube-dl shortcuts ###########
 alias ytdl-mp3='youtube-dl -R 10 -x --audio-format mp3 --prefer-ffmpeg -o "%(title)s.%(ext)s"'
 alias ytdl-mp4='youtube-dl -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "%(title)s.%(ext)s"'
 alias ytdl-plist='youtube-dl -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" --yes-playlist --playlist-start 1 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
 alias ytdl='youtube-dl'
+
+######## subliminal shortcuts ###########
+alias subtitle='subliminal download -l en .'
 
 ############# weather info ##############
 forecast() {curl wttr.in/"$@"; }
