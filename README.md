@@ -1,5 +1,6 @@
 
-## quick-setup for newly installed linux desktop environment 
+## **quick-setup** for newly installed linux desktop environment. (targeted for ubuntu and ubuntu based distros)
+
  `(created mainly for myself to save some time after installing a new linux distro, but keeping it public so that other people can help themselves too.)`
 
  
@@ -64,7 +65,6 @@ sudo add-apt-repository ppa:apt-fast/stable
 ``` 
 ```sh
 sudo apt-get update
-
 ``` 
 ```sh
 sudo apt-get -y install apt-fast
@@ -132,7 +132,7 @@ zsh-autosuggestions)/gi" ~/.zshrc
 ```sh
 echo -e "\nsource \$HOME/.aliases\n" | tee -a ~/.zshrc
 ```
-#### adding new dir to $PATH
+#### adding user dir to $PATH
 ```sh
 echo -e "\nexport PATH=\"\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
 ```
@@ -221,41 +221,59 @@ sudo gem install colorls
 
 #### basic apps:
 ```sh
-sudo apt-get install synaptic gparted ubuntu-restricted-extras \
-git curl zsh fonts-powerline ttf-mscorefonts-installer \
-catfish gnome-disk-utility ntfs-3g grub-customizer \
-adb fastboot scrcpy openvpn m17n-db ibus-avro goldendict \
-stacer gimp inkscape krita deluge \
-flameshot kazam wine winetricks
+sudo apt-get install \
+ubuntu-restricted-extras \
+git curl zsh \
+fonts-powerline ttf-mscorefonts-installer \
+ntfs-3g grub-customizer \
+adb fastboot scrcpy openvpn \
+m17n-db ibus-avro goldendict \
+stacer gimp inkscape krita qbittorrent \
+flameshot kazam \
+wine winetricks \
+
 ```
 
 #### build essentials:
 ```sh
-sudo apt-get install build-essential dpkg-repack dkms cmake checkinstall
+sudo apt-get install \
+build-essential dpkg-repack dkms cmake checkinstall
 ```
 
 #### python:
 ```sh
-sudo apt-get install python2 python3 python3-pip python-setuptools python3-setuptools python-wheel-common
+sudo apt-get install \
+python2 python3 python3-pip python-setuptools python3-setuptools python-wheel-common
+```
+
+#### gtk tools
+```sh
+sudo apt-get install \
+synaptic gparted catfish gnome-disk-utility 
 ```
 
 #### kde tools:
 ```sh
-sudo apt-get install qapt-deb-installer yakuake xdg-desktop-portal-gtk xdg-desktop-portal-kde \
+sudo apt-get install \
+qapt-deb-installer yakuake xdg-desktop-portal-gtk xdg-desktop-portal-kde \
 muon krfb redshift filelight latte-dock
 ```
-#### cli_tools:
+#### cli tools:
 ```sh
-sudo apt-get install mc ffmpeg elinks rtorrent cmus screen vsftpd \
-htop inxi neofetch whois vnstat iftop bat fim
+sudo apt-get install \
+mc ffmpeg elinks rtorrent cmus screen vsftpd \
+htop inxi neofetch whois vnstat iftop dnstop bmon \
+bat fim
 ```
 #### fun commands:
 ```sh
-sudo apt-get install figlet boxes cmatrix toilet sl cowsay lolcat \
+sudo apt-get install \
+figlet boxes cmatrix toilet sl cowsay lolcat \
 fortune-mod fortunes fortune-min fortune-off
 ```
 #### screensaver:
 ```sh
+sudo apt-get install \
 xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra 
 ```
   
@@ -300,9 +318,7 @@ pip3 install lyrics-in-terminal
 sudo apt-get install gnupg1 apt-transport-https dirmngr
 ```
 ```sh
-export INSTALL_KEY=379CE192D401AB61
-```
-```sh
+export INSTALL_KEY=379CE192D401AB61;
 sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
 ```
 ```sh
@@ -310,14 +326,9 @@ echo "deb https://ookla.bintray.com/debian generic main" \
 | sudo tee  /etc/apt/sources.list.d/speedtest.list
 ```
 ```sh
-sudo apt-get update
+sudo apt-get update && sudo apt-get install speedtest
 ```
-```sh
-sudo apt-get install speedtest
-```
-
-
-
+  
 ---------------------------------------------------------------------  
 
 ## * subliminal
