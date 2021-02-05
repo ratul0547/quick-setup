@@ -1,6 +1,6 @@
 
 ############ basic shortcuts ############
-alias update='sudo apt-get update && sudo apt-get upgrade'
+alias update='sudo apt update && sudo apt upgrade'
 alias pkg='sudo apt-fast'
 alias open='xdg-open'
 alias c='clear'
