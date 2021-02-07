@@ -159,7 +159,23 @@ echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
 sudo journalctl --vacuum-time=31days
 ```
 
+---------------------------------------------------------------------  
+## * colored cat
+_source: https://github.com/owenthereal/ccat_
+
+```sh
+wget -O ~/Downloads/ccat-linux-amd64-1.1.0.tar.gz \
+https://github.com/owenthereal/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
+```
+```sh
+tar xvf ~/Downloads/ccat-linux-amd64-1.1.0.tar.gz && \
+cp ~/Downloads/linux-amd64-1.1.0/ccat ~/.local/bin/ccat
+```
+```sh
+echo -e "alias cat='ccat'" | tee -a ~/.aliases
+```
   
+
 ---------------------------------------------------------------------  
   
 ## * advanced cp and mv:
