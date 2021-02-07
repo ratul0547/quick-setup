@@ -505,6 +505,7 @@ apt update && apt install -y anydesk
 ## * zoom
 ###### (video meeting client)
 ```sh
-wget -cO zoom_amd64.deb https://zoom.us/client/latest/zoom_amd64.deb && sudo apt install zoom_amd64.deb
+wget -cO zoom_amd64.deb https://zoom.us/client/latest/zoom_amd64.deb && \
+sudo apt install zoom_amd64.deb
 ```
 ---------------------------------------------------------------------
