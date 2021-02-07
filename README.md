@@ -56,7 +56,10 @@ deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-security main restricted 
 
 ## * apt-fast:
 
-###### if add-apt-repository is unavailable: 
+###### (A faster way to download packages via aria2 backend)  
+  
+
+##### # if add-apt-repository is unavailable: 
 `sudo apt-get install software-properties-common`
 
 #### install:
@@ -224,10 +227,18 @@ sudo apt install -y ruby-dev
 sudo gem install colorls
 ```
 
+#### set alias 
+```sh
+echo -e \
+"alias lc='colorls'\n\
+alias l='colorls --sd'\n\
+alias la='colorls -A --sd'\n\
+alias ll='colorls -lA --sd'\n\
+alias lt='colorls --sd --tree=2'" \
+| tee -a ~/.aliases
+```
   
-  
-  
-  
+    
 ---------------------------------------------------------------------  
 --------------------------------------------------------------------- 
 # PACKAGES
@@ -279,7 +290,7 @@ muon krfb redshift filelight latte-dock
 sudo apt-get install \
 mc ffmpeg elinks rtorrent cmus screen vsftpd \
 htop inxi neofetch whois vnstat iftop dnstop bmon \
-bat fim
+bat fim mpv 
 ```
 #### fun commands:
 ```sh
@@ -422,7 +433,7 @@ sudo apt-get install clementine
 ## * discord
 ###### (Online chat and communication client)
 ```sh
-wget -c -O discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb && \
+wget -cO discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb && \
 qapt-deb-installer discord.deb
 ```
 
@@ -490,3 +501,10 @@ apt update && apt install -y anydesk
 ```
   
   
+---------------------------------------------------------------------  
+## * zoom
+###### (video meeting client)
+```sh
+wget -cO zoom_amd64.deb https://zoom.us/client/latest/zoom_amd64.deb && sudo apt install zoom_amd64.deb
+```
+---------------------------------------------------------------------
