@@ -112,7 +112,7 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo -e "\
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \n\
 ZSH_AUTOSUGGEST_STRATEGY=(history completion) \n\
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" \n\
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE="20" \n\
 ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c70,)" \n\
 ZSH_AUTOSUGGEST_COMPLETION_IGNORE="apt pip pip3" \
 >> ~/.zshrc
