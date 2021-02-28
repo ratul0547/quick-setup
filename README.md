@@ -112,7 +112,10 @@ git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-m
 echo -e "\
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \n\
 ZSH_AUTOSUGGEST_STRATEGY=(history completion) \n\
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" >> ~/.zshrc
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20" \n\
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c70,)"
+ZSH_AUTOSUGGEST_COMPLETION_IGNORE="apt pip pip3" \
+>> ~/.zshrc
 ```
 #### adding plugins
 ```sh
@@ -172,13 +175,12 @@ https://github.com/owenthereal/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.t
 ```
 ```sh
 tar xvf ~/Downloads/ccat-linux-amd64-1.1.0.tar.gz && \
-cp ~/Downloads/linux-amd64-1.1.0/ccat ~/.local/bin/ccat
+sudo cp ~/Downloads/linux-amd64-1.1.0/ccat /usr/local/bin/ccat
 ```
 ```sh
 echo -e "alias cat='ccat'" | tee -a ~/.aliases
 ```
   
-
 ---------------------------------------------------------------------  
   
 ## * advanced cp and mv:

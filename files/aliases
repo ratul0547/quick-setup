@@ -39,10 +39,11 @@ alias pingtest='ping -c 20 -i .2 8.8.8.8'
 alias pingtest2='sudo ping -fc 1000 8.8.8.8'
 
 ######## youtube-dl shortcuts ###########
-alias ytdl-mp3='youtube-dl -R 10 -x --audio-format mp3 --prefer-ffmpeg -o "%(title)s.%(ext)s"'
-alias ytdl-mp4='youtube-dl -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "%(title)s.%(ext)s"'
-alias ytdl-plist='youtube-dl -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" --yes-playlist --playlist-start 1 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
 alias ytdl='youtube-dl'
+alias dlmp3='youtube-dl -R 10 -x --audio-format mp3 --prefer-ffmpeg -o "%(title)s.%(ext)s"'
+alias dlmp4='youtube-dl -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "%(title)s.%(ext)s"'
+alias dlplist='youtube-dl -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" --yes-playlist --playlist-start 1 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
+alias vdl='youtube-dl -R 10 -o ~/Downloads/"%(title)s.%(ext)s"'
 
 ######## subliminal shortcuts ###########
 alias subtitle='subliminal download -l en .'
