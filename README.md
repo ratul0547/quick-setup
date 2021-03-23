@@ -292,7 +292,7 @@ muon krfb redshift filelight latte-dock
 sudo apt-get install \
 mc ffmpeg elinks rtorrent cmus screen vsftpd \
 htop inxi neofetch whois vnstat iftop dnstop bmon \
-bat fim mpv 
+bat fim mpv units imagemagick 
 ```
 #### fun commands:
 ```sh
