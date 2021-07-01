@@ -256,6 +256,7 @@ wget -c https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd6
 sudo apt install ./lsd_0.20.1_amd64.deb
 ```
 #### set alias
+```sh
 echo -e \
 "alias lc='lsd'\n\
 alias l='lsd --group-dirs first'\n\
