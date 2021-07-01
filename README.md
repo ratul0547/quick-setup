@@ -255,14 +255,14 @@ wget -c https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd6
 ```sh
 sudo apt install ./lsd_0.20.1_amd64.deb
 ```
-#### set alias 
-```sh
+#### set alias
 echo -e \
-"alias lc='colorls'\n\
-alias l='colorls --sd'\n\
-alias la='colorls -A --sd'\n\
-alias ll='colorls -lA --sd'\n\
-alias lt='colorls --sd --tree=2'" \
+"alias lc='lsd'\n\
+alias l='lsd --group-dirs first'\n\
+alias la='lsd -A --group-dirs first'\n\
+alias ll='lsd -lA --group-dirs first'\n\
+alias lt='lsd --tree --depth 2 --group-dirs first'\n\
+alias lta='lsd -A --tree --depth 3 --group-dirs first'"\
 | tee -a ~/.aliases
 ```
 ### or
@@ -276,7 +276,16 @@ sudo apt install -y ruby-dev
 ```sh
 sudo gem install colorls
 ```
-
+#### set alias 
+```sh
+echo -e \
+"alias lc='colorls'\n\
+alias l='colorls --sd'\n\
+alias la='colorls -A --sd'\n\
+alias ll='colorls -lA --sd'\n\
+alias lt='colorls --sd --tree=2'" \
+| tee -a ~/.aliases
+```
   
     
 ---------------------------------------------------------------------  
@@ -548,3 +557,10 @@ sudo add-apt-repository ppa:papirus/papirus
 ```sh
 sudo apt update && sudo apt install qt5-style-kvantum qt5-style-kvantum-themes
 ```
+
+---------------------------------------------------------------------
+
+## * VSCodium
+
+download package from the releases page and install:
+https://github.com/vscodium/vscodium/releases
