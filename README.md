@@ -341,11 +341,10 @@ falkon okular
 #### cli tools:
 ```sh
 sudo apt-get install \
-mc ffmpeg elinks rtorrent cmus screen vsftpd \
+mc ffmpeg elinks rtorrent cmus cava \
+screen byobu openssh-server openssh-client openssh-askpass vsftpd \
 htop inxi neofetch whois vnstat iftop dnstop bmon nmap \
-bat fim mpv units imagemagick ghostscript mlocate \
-
- 
+bat fim mpv units imagemagick ghostscript mlocate
 ```
 #### fun commands:
 ```sh
