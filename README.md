@@ -520,3 +520,14 @@ sudo apt install ./zoom_amd64.deb
 wget -c0 telegram-linux.tar.xz https://telegram.org/dl/desktop/linux
 ```
 
+---------------------------------------------------------------------
+
+### * kvantum theme engine
+
+```sh
+sudo add-apt-repository ppa:papirus/papirus
+```
+
+```sh
+sudo apt update && sudo apt install qt5-style-kvantum qt5-style-kvantum-themes
+```
