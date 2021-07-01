@@ -47,6 +47,11 @@ deb http://mirror.xeonbd.com/ubuntu-archive/ $CODENAME-security main restricted 
 | sudo tee /etc/apt/sources.list.d/bd-mirrors.list
 ```
 
+```sh
+sudo mv /etc/apt/sources.list /etc/apt/sources.list.bak && \
+sudo touch /etc/apt/sources.list
+```
+
 #### update apt database:
 `sudo apt update && sudo apt upgrade`
 
@@ -86,7 +91,14 @@ sudo apt-get -y install apt-fast
 #### packages needed:
 `zsh` ` curl` ` git`
 
+#### Installing dependencies
+
+```sh
+sudo apt install zsh curl git
+```
+
 #### installing oh-my-zsh
+
 ```sh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
@@ -121,14 +133,12 @@ ZSH_AUTOSUGGEST_COMPLETION_IGNORE="apt pip pip3" \
 ```sh
 sed -i "s/plugins=(git)/plugins=(git\n\
 extract\n\
-adb\n\
 sudo\n\
 history\n\
 safe-paste\n\
 python\n\
 pip\n\
 colored-man-pages\n\
-colorize\n\
 web-search\n\
 zsh-syntax-highlighting\n\
 zsh-autosuggestions)/gi" ~/.zshrc
@@ -168,6 +178,12 @@ sudo journalctl --vacuum-time=31days
 ---------------------------------------------------------------------  
 ## * colored cat
 _source: https://github.com/owenthereal/ccat_
+
+#### Dependencies
+
+```sh
+sudo pip3 install pygments
+```
 
 ```sh
 wget -O ~/Downloads/ccat-linux-amd64-1.1.0.tar.gz \
@@ -222,6 +238,9 @@ echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" |
 ---------------------------------------------------------------------  
 
 ## * colored ls:
+
+### colorls 
+
 ```sh
 sudo apt install -y ruby-dev
 ``` 
@@ -229,6 +248,14 @@ sudo apt install -y ruby-dev
 sudo gem install colorls
 ```
 
+### lsd
+```sh
+wget -c https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb
+```
+
+```sh
+sudo apt install ./lsd_0.20.1_amd64.deb
+```
 #### set alias 
 ```sh
 echo -e \
@@ -248,7 +275,7 @@ alias lt='colorls --sd --tree=2'" \
   
 `sudo apt update && sudo apt upgrade -y`
 
-#### basic apps:
+#### basic packages:
 ```sh
 sudo apt-get install \
 ubuntu-restricted-extras \
@@ -298,7 +325,7 @@ bat fim mpv units imagemagick
 ```sh
 sudo apt-get install \
 figlet boxes cmatrix toilet sl cowsay lolcat \
-fortune-mod fortunes fortune-min fortune-off
+fortune
 ```
 #### screensaver:
 ```sh
@@ -344,18 +371,10 @@ pip3 install lyrics-in-terminal
 
 ## * speedtest-cli
 ```sh
-sudo apt-get install gnupg1 apt-transport-https dirmngr
+curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
 ```
 ```sh
-export INSTALL_KEY=379CE192D401AB61;
-sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys $INSTALL_KEY
-```
-```sh
-echo "deb https://ookla.bintray.com/debian generic main" \
-| sudo tee  /etc/apt/sources.list.d/speedtest.list
-```
-```sh
-sudo apt-get update && sudo apt-get install speedtest
+sudo apt-get install speedtest
 ```
   
 ---------------------------------------------------------------------  
@@ -378,6 +397,7 @@ echo "alias subltitle='subliminal download -l en ./' " | tee -a ~/.aliases
 ---------------------------------------------------------------------  
 
 ## * brave-browser
+
 ```sh
 sudo apt install apt-transport-https curl gnupg
 ```
@@ -413,30 +433,13 @@ sudo apt install -y persepolis
 ```
 
 
-
----------------------------------------------------------------------  
-
-## * clementine
-###### (Music player)
-```sh
-sudo add-apt-repository ppa:me-davidsansome/clementine
-```
-```sh
-sudo apt-get update
-```
-```sh
-sudo apt-get install clementine
-```
-
-
-
 ---------------------------------------------------------------------  
 
 ## * discord
 ###### (Online chat and communication client)
 ```sh
 wget -cO discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb && \
-qapt-deb-installer discord.deb
+sudo apt install ./discord.deb
 ```
 
 
@@ -508,6 +511,12 @@ apt update && apt install -y anydesk
 ###### (video meeting client)
 ```sh
 wget -cO zoom_amd64.deb https://zoom.us/client/latest/zoom_amd64.deb && \
-sudo apt install zoom_amd64.deb
+sudo apt install ./zoom_amd64.deb
 ```
 ---------------------------------------------------------------------
+
+### * telegram
+```sh
+wget -c0 telegram-linux.tar.xz https://telegram.org/dl/desktop/linux
+```
+
