@@ -328,7 +328,7 @@ python2 python3 python3-pip python-setuptools python3-setuptools python-wheel-co
 #### gtk tools
 ```sh
 sudo apt-get install \
-synaptic gparted catfish gnome-disk-utility 
+synaptic gparted catfish gnome-disk-utility keepassxc
 ```
 
 #### kde tools:
