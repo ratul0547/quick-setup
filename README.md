@@ -60,6 +60,7 @@ sudo touch /etc/apt/sources.list
 ---------------------------------------------------------------------  
 
 ## * apt-fast:
+_(https://github.com/ilikenwf/apt-fast)_
 
 ###### (A faster way to download packages via aria2 backend)  
   
@@ -87,6 +88,7 @@ sudo apt-get -y install apt-fast
 ---------------------------------------------------------------------  
 
 ## * oh-my-zsh:
+_(https://github.com/ohmyzsh/ohmyzsh)_
 
 #### packages needed:
 `zsh` ` curl` ` git`
@@ -103,7 +105,9 @@ sudo apt install zsh curl git
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 ```
 
-#### installing p10k theme
+#### installing p10k theme 
+_(https://github.com/romkatv/powerlevel10k)_
+
 ```sh
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
 ```
@@ -112,10 +116,14 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 sed -i "s/robbyrussell/powerlevel10k\/powerlevel10k/gi" ~/.zshrc
 ```
 #### installing zsh-syntax-highlighting
+_(https://github.com/zsh-users/zsh-syntax-highlighting)_
+
 ```sh
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting
 ```
 #### installing zsh-autosuggestions
+_(https://github.com/zsh-users/zsh-autosuggestions)_
+
 ```sh
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
@@ -156,7 +164,6 @@ echo -e "\nexport PATH=\"\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
   
   
   
-  
 ---------------------------------------------------------------------  
 --------------------------------------------------------------------- 
 # TWEAKS
@@ -177,7 +184,7 @@ sudo journalctl --vacuum-time=31days
 
 ---------------------------------------------------------------------  
 ## * colored cat
-_source: https://github.com/owenthereal/ccat_
+_(https://github.com/owenthereal/ccat)_
 
 #### Dependencies
 
@@ -201,7 +208,7 @@ echo -e "alias cat='ccat'" | tee -a ~/.aliases
   
 ## * advanced cp and mv:
 ###### _(With progressbar)_
-_source: https://github.com/jarun/advcpmv_
+_(https://github.com/jarun/advcpmv)_
 
 #### building
 ```sh
@@ -236,19 +243,11 @@ echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" |
 
   
 ---------------------------------------------------------------------  
-
 ## * colored ls:
 
-### colorls 
-
-```sh
-sudo apt install -y ruby-dev
-``` 
-```sh
-sudo gem install colorls
-```
-
 ### lsd
+_(https://github.com/Peltoche/lsd)_
+
 ```sh
 wget -c https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb
 ```
@@ -266,6 +265,18 @@ alias ll='colorls -lA --sd'\n\
 alias lt='colorls --sd --tree=2'" \
 | tee -a ~/.aliases
 ```
+### or
+
+#### colorls 
+_(https://github.com/athityakumar/colorls)_
+
+```sh
+sudo apt install -y ruby-dev
+``` 
+```sh
+sudo gem install colorls
+```
+
   
     
 ---------------------------------------------------------------------  
@@ -284,9 +295,11 @@ fonts-powerline ttf-mscorefonts-installer \
 ntfs-3g grub-customizer \
 adb fastboot scrcpy openvpn \
 m17n-db ibus-avro goldendict \
-stacer gimp inkscape krita qbittorrent \
+gimp inkscape krita qbittorrent \
 flameshot kazam \
-wine winetricks \
+obs-studio nomacs \
+thunderbird birdtray \
+
 
 ```
 
@@ -312,20 +325,23 @@ synaptic gparted catfish gnome-disk-utility
 ```sh
 sudo apt-get install \
 qapt-deb-installer yakuake xdg-desktop-portal-gtk xdg-desktop-portal-kde \
-muon krfb redshift filelight latte-dock
+muon krfb redshift filelight latte-dock \
+falkon okular 
 ```
 #### cli tools:
 ```sh
 sudo apt-get install \
 mc ffmpeg elinks rtorrent cmus screen vsftpd \
-htop inxi neofetch whois vnstat iftop dnstop bmon \
-bat fim mpv units imagemagick 
+htop inxi neofetch whois vnstat iftop dnstop bmon nmap \
+bat fim mpv units imagemagick ghostscript mlocate \
+
+ 
 ```
 #### fun commands:
 ```sh
 sudo apt-get install \
 figlet boxes cmatrix toilet sl cowsay lolcat \
-fortune
+fortune fortunes-off
 ```
 #### screensaver:
 ```sh
@@ -344,6 +360,7 @@ xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
   
 ## * youtube-dl
 ###### (youtube downloader)
+_(https://youtube-dl.org)_
   
 #### via pip
 ```sh
@@ -361,6 +378,7 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 
 ---------------------------------------------------------------------  
 ## * lyrics-in-terminal
+_(https://pypi.org/project/lyrics-in-terminal)_
 
 ```sh
 pip3 install lyrics-in-terminal
@@ -370,6 +388,8 @@ pip3 install lyrics-in-terminal
 ---------------------------------------------------------------------  
 
 ## * speedtest-cli
+_(https://speedtest.net)_
+
 ```sh
 curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
 ```
@@ -381,6 +401,7 @@ sudo apt-get install speedtest
 
 ## * subliminal
 ###### (subtitle downloader)
+_(https://github.com/Diaoul/subliminal)_
 
 depends on: `python` `python3-pip` `python-setuptools` `python3-setuptools` `python-wheel-common`
 
@@ -410,10 +431,7 @@ echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable ma
 | sudo tee /etc/apt/sources.list.d/brave-browser-release.list
 ```
 ```sh
-sudo apt update
-```
-```sh
-sudo apt install brave-browser
+sudo apt update && sudo apt install brave-browser
 ```
 
 
@@ -482,10 +500,7 @@ sudo apt update && sudo apt install -y freetuxtv
 sudo add-apt-repository ppa:rvm/smplayer
 ```
 ```sh
-sudo apt-get update
-```
-```sh
-sudo apt-get install smplayer smplayer-themes smplayer-skins
+sudo apt-get update && sudo apt-get install smplayer smplayer-themes smplayer-skins
 ```
 
 
@@ -502,7 +517,7 @@ echo "deb http://deb.anydesk.com/ all main" \
 | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
 ```
 ```sh
-apt update && apt install -y anydesk
+apt update && apt install anydesk
 ```
   
   
@@ -517,9 +532,11 @@ sudo apt install ./zoom_amd64.deb
 
 ### * telegram
 ```sh
-wget -c0 telegram-linux.tar.xz https://telegram.org/dl/desktop/linux
+wget -cO telegram-linux.tar.xz https://telegram.org/dl/desktop/linux
 ```
-
+```sh
+tar -xvJf telegram-linux.tar.xz && cd Telegram
+```
 ---------------------------------------------------------------------
 
 ### * kvantum theme engine
