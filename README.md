@@ -509,7 +509,7 @@ sudo apt update && sudo apt install -y freetuxtv
 sudo add-apt-repository ppa:rvm/smplayer
 ```
 ```sh
-sudo apt-get update && sudo apt-get install smplayer smplayer-themes smplayer-skins
+sudo apt-get update && sudo apt-get install smplayer smplayer-themes smplayer-skins mplayer
 ```
 
 
