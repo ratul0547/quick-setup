@@ -309,7 +309,7 @@ gimp inkscape krita qbittorrent \
 flameshot kazam \
 obs-studio nomacs \
 thunderbird birdtray \
-
+numix-icon-theme-circle gnome-icon-theme \
 
 ```
 
