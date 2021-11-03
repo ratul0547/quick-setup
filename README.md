@@ -309,7 +309,7 @@ gimp inkscape krita qbittorrent \
 flameshot kazam \
 obs-studio nomacs \
 thunderbird birdtray \
-numix-icon-theme-circle gnome-icon-theme \
+numix-icon-theme-circle gnome-icon-theme lxappearance\
 
 ```
 
@@ -328,7 +328,7 @@ python2 python3 python3-pip python-setuptools python3-setuptools python-wheel-co
 #### gtk tools
 ```sh
 sudo apt-get install \
-synaptic gparted catfish gnome-disk-utility keepassxc
+synaptic gparted catfish gnome-disk-utility gnome-keyring seahorse keepassxc
 ```
 
 #### kde tools:
@@ -341,7 +341,7 @@ falkon okular
 #### cli tools:
 ```sh
 sudo apt-get install \
-mc ffmpeg elinks rtorrent cmus cava \
+testdisk mc ffmpeg elinks rtorrent cmus cava \
 screen byobu openssh-server openssh-client openssh-askpass vsftpd \
 htop inxi neofetch whois vnstat iftop dnstop bmon nmap \
 bat fim mpv units imagemagick ghostscript mlocate
@@ -352,10 +352,11 @@ sudo apt-get install \
 figlet boxes cmatrix toilet sl cowsay lolcat \
 fortune fortunes-off
 ```
+
 #### screensaver:
 ```sh
 sudo apt-get install \
-xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra 
+xscreensaver xscreensaver-\* 
 ```
   
   
@@ -371,12 +372,7 @@ xscreensaver xscreensaver-data-extra xscreensaver-gl xscreensaver-gl-extra
 ###### (youtube downloader)
 _(https://youtube-dl.org)_
   
-#### via pip
-```sh
-pip3 install --upgrade youtube_dl
-```
-  
-#### or, direct installation
+#### direct installation
 ```sh
 sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
 ```
@@ -384,8 +380,15 @@ sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/you
 sudo chmod a+rx /usr/local/bin/youtube-dl
 ```
 
+  
+#### or, via pip
+```sh
+pip3 install --upgrade youtube_dl
+```
+
 
 ---------------------------------------------------------------------  
+
 ## * lyrics-in-terminal
 _(https://pypi.org/project/lyrics-in-terminal)_
 
@@ -447,20 +450,6 @@ sudo apt update && sudo apt install brave-browser
 
 ---------------------------------------------------------------------  
 
-## * persepolis
-###### (Download manager)
-```sh
-sudo add-apt-repository ppa:persepolis/ppa
-```
-```sh
-sudo apt update
-```
-```sh
-sudo apt install -y persepolis
-```
-
-
----------------------------------------------------------------------  
 
 ## * discord
 ###### (Online chat and communication client)
@@ -491,18 +480,6 @@ sudo apt-get update && sudo apt-get install -y spotify-client
 
 ---------------------------------------------------------------------  
 
-## * freetuxtv
-###### (live tv)
-```sh
-sudo add-apt-repository ppa:freetuxtv/freetuxtv-dev
-```
-```sh
-sudo apt update && sudo apt install -y freetuxtv
-```
-
-
----------------------------------------------------------------------  
-
 ## * smplayer
 ###### (powerful video player)
 ```sh
@@ -526,7 +503,7 @@ echo "deb http://deb.anydesk.com/ all main" \
 | sudo tee /etc/apt/sources.list.d/anydesk-stable.list
 ```
 ```sh
-apt update && apt install anydesk
+sudo apt update && sudo apt install anydesk
 ```
   
   
