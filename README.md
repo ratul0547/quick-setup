@@ -350,8 +350,7 @@ bat fim mpv units imagemagick ghostscript mlocate
 #### fun commands:
 ```sh
 sudo apt-get install \
-figlet boxes cmatrix toilet sl cowsay lolcat \
-fortune fortunes-off
+figlet boxes cmatrix toilet sl cowsay lolcat fortune
 ```
 
 #### screensaver:
