@@ -288,9 +288,9 @@ alias lt='colorls --sd --tree=2'" \
 | tee -a ~/.aliases
 ```
   
-    
+  
 ---------------------------------------------------------------------  
---------------------------------------------------------------------- 
+---------------------------------------------------------------------  
 # PACKAGES
   
   
@@ -322,13 +322,14 @@ build-essential dpkg-repack dkms cmake checkinstall
 #### python:
 ```sh
 sudo apt-get install \
-python2 python3 python3-pip python-setuptools python3-setuptools python-wheel-common
+python2 python3 python3-pip
 ```
 
 #### gtk tools
 ```sh
 sudo apt-get install \
-synaptic gparted catfish gnome-disk-utility gnome-keyring seahorse keepassxc
+synaptic gparted catfish gnome-disk-utility \
+gnome-keyring seahorse keepassxc libsecret-tools
 ```
 
 #### kde tools:
@@ -336,7 +337,7 @@ synaptic gparted catfish gnome-disk-utility gnome-keyring seahorse keepassxc
 sudo apt-get install \
 qapt-deb-installer yakuake xdg-desktop-portal-gtk xdg-desktop-portal-kde \
 muon krfb redshift filelight latte-dock \
-falkon okular 
+falkon okular ksysguard dolphin konsole
 ```
 #### cli tools:
 ```sh
@@ -363,7 +364,7 @@ xscreensaver xscreensaver-\*
   
   
 
---------------------------------------------------------------------- 
+---------------------------------------------------------------------  
 ---------------------------------------------------------------------  
 # ADDITIONAL PACKAGES
   
@@ -386,6 +387,32 @@ sudo chmod a+rx /usr/local/bin/youtube-dl
 pip3 install --upgrade youtube_dl
 ```
 
+
+---------------------------------------------------------------------  
+
+## * zoom
+###### (video meeting client)
+```sh
+wget -cO zoom_amd64.deb https://zoom.us/client/latest/zoom_amd64.deb && \
+sudo apt install ./zoom_amd64.deb
+```
+
+---------------------------------------------------------------------  
+
+
+### * telegram
+
+```sh
+sudo apt install telegram-desktop
+```
+or,
+
+```sh
+wget -cO telegram-linux.tar.xz https://telegram.org/dl/desktop/linux
+```
+```sh
+tar -xvJf telegram-linux.tar.xz && cd Telegram
+```
 
 ---------------------------------------------------------------------  
 
@@ -486,7 +513,7 @@ sudo apt-get update && sudo apt-get install -y spotify-client
 sudo add-apt-repository ppa:rvm/smplayer
 ```
 ```sh
-sudo apt-get update && sudo apt-get install smplayer smplayer-themes smplayer-skins mplayer
+sudo apt-get update && sudo apt-get install mplayer smplayer smplayer-themes smplayer-skins
 ```
 
 
@@ -508,22 +535,6 @@ sudo apt update && sudo apt install anydesk
   
   
 ---------------------------------------------------------------------  
-## * zoom
-###### (video meeting client)
-```sh
-wget -cO zoom_amd64.deb https://zoom.us/client/latest/zoom_amd64.deb && \
-sudo apt install ./zoom_amd64.deb
-```
----------------------------------------------------------------------
-
-### * telegram
-```sh
-wget -cO telegram-linux.tar.xz https://telegram.org/dl/desktop/linux
-```
-```sh
-tar -xvJf telegram-linux.tar.xz && cd Telegram
-```
----------------------------------------------------------------------
 
 ### * kvantum theme engine
 
@@ -535,7 +546,7 @@ sudo add-apt-repository ppa:papirus/papirus
 sudo apt update && sudo apt install qt5-style-kvantum qt5-style-kvantum-themes
 ```
 
----------------------------------------------------------------------
+---------------------------------------------------------------------  
 
 ## * VSCodium
 
