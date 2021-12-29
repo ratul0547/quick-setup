@@ -59,39 +59,9 @@ sudo touch /etc/apt/sources.list
   
 ---------------------------------------------------------------------  
 
-## * apt-fast:
-_(https://github.com/ilikenwf/apt-fast)_
-
-###### (A faster way to download packages via aria2 backend)  
-  
-
-##### # if add-apt-repository is unavailable: 
-`sudo apt-get install software-properties-common`
-
-#### install:
-```sh
-sudo add-apt-repository ppa:apt-fast/stable
-``` 
-```sh
-sudo apt-get update
-``` 
-```sh
-sudo apt-get -y install apt-fast
-```
-#### or, quick install:
-```sh
-/bin/bash -c "$(curl -sL https://git.io/vokNn)"
-```
-  
-
-  
----------------------------------------------------------------------  
-
 ## * oh-my-zsh:
 _(https://github.com/ohmyzsh/ohmyzsh)_
 
-#### packages needed:
-`zsh` ` curl` ` git`
 
 #### Installing dependencies
 
@@ -128,15 +98,15 @@ _(https://github.com/zsh-users/zsh-autosuggestions)_
 git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions
 ```
 #### autosuggestions-config
-```sh
-echo -e "\
-ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030" \n\
-ZSH_AUTOSUGGEST_STRATEGY=(history completion) \n\
-ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20 \n\
-ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c70,)" \n\
-ZSH_AUTOSUGGEST_COMPLETION_IGNORE="apt pip pip3" \
->> ~/.zshrc
+Put these lines at the end of `~/.zshrc`
 ```
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE="fg=#303030"
+ZSH_AUTOSUGGEST_STRATEGY=(history completion)
+ZSH_AUTOSUGGEST_BUFFER_MAX_SIZE=20
+ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c70,)"
+ZSH_AUTOSUGGEST_COMPLETION_IGNORE="apt pip pip3"
+```
+
 #### adding plugins
 ```sh
 sed -i "s/plugins=(git)/plugins=(git\n\
@@ -183,63 +153,35 @@ sudo journalctl --vacuum-time=31days
 ```
 
 ---------------------------------------------------------------------  
-## * colored cat
-_(https://github.com/owenthereal/ccat)_
 
-#### Dependencies
-
-```sh
-sudo pip3 install pygments
-```
-
-```sh
-wget -O ~/Downloads/ccat-linux-amd64-1.1.0.tar.gz \
-https://github.com/owenthereal/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
-```
-```sh
-tar xvf ~/Downloads/ccat-linux-amd64-1.1.0.tar.gz && \
-sudo cp ~/Downloads/linux-amd64-1.1.0/ccat /usr/local/bin/ccat
-```
-```sh
-echo -e "alias cat='ccat'" | tee -a ~/.aliases
-```
-  
----------------------------------------------------------------------  
-  
 ## * advanced cp and mv:
 ###### _(With progressbar)_
 _(https://github.com/jarun/advcpmv)_
 
 #### building
 ```sh
-wget http://ftp.gnu.org/gnu/coreutils/coreutils-8.32.tar.xz
-```
-```sh
-tar xvJf coreutils-8.32.tar.xz && cd coreutils-8.32/
-```
-```sh
-wget https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-0.8-8.32.patch
-```
-```sh
-patch -p1 -i advcpmv-0.8-8.32.patch
-```
-```sh
+wget http://ftp.gnu.org/gnu/coreutils/coreutils-9.0.tar.xz
+tar xvJf coreutils-9.0.tar.xz
+cd coreutils-9.0/
+wget https://raw.githubusercontent.com/jarun/advcpmv/master/advcpmv-0.9-9.0.patch
+patch -p1 -i advcpmv-0.9-9.0.patch
 ./configure
-```
-```sh
 make
 ```
-  
-#### put files to proper $PATH
+
+#### installing
 ```sh
-sudo cp ./src/cp /usr/local/bin/copy && sudo cp ./src/mv /usr/local/bin/move
+sudo mv ./src/cp /usr/local/bin/copy
+sudo mv ./src/mv /usr/local/bin/move
 ```
   
 #### set alias
 ```sh
-echo -e "\n## Advanced cp and mv\nalias copy='copy -gR'\nalias move='move -g'" | tee -a ~/.aliases
+echo -e "\n## Advanced cp and mv\n
+alias copy='copy -gr'\n
+alias move='move -g'" | \
+tee -a ~/.aliases
 ```
-
 
   
 ---------------------------------------------------------------------  
@@ -255,6 +197,7 @@ wget -c https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd6
 ```sh
 sudo apt install ./lsd_0.20.1_amd64.deb
 ```
+
 #### set alias
 ```sh
 echo -e \
@@ -266,28 +209,33 @@ alias lt='lsd --tree --depth 2 --group-dirs first'\n\
 alias lta='lsd -A --tree --depth 3 --group-dirs first'"\
 | tee -a ~/.aliases
 ```
-### or
 
-#### colorls 
-_(https://github.com/athityakumar/colorls)_
-
-```sh
-sudo apt install -y ruby-dev
-``` 
-```sh
-sudo gem install colorls
-```
-#### set alias 
-```sh
-echo -e \
-"alias lc='colorls'\n\
-alias l='colorls --sd'\n\
-alias la='colorls -A --sd'\n\
-alias ll='colorls -lA --sd'\n\
-alias lt='colorls --sd --tree=2'" \
-| tee -a ~/.aliases
-```
   
+---------------------------------------------------------------------  
+
+## * colored cat
+_(https://github.com/owenthereal/ccat)_
+
+#### Dependencies
+
+```sh
+pip3 install pygments
+```
+
+#### Installing
+
+```sh
+wget -O ~/Downloads/ccat-linux-amd64-1.1.0.tar.gz \
+https://github.com/owenthereal/ccat/releases/download/v1.1.0/linux-amd64-1.1.0.tar.gz
+```
+```sh
+tar xvf ~/Downloads/ccat-linux-amd64-1.1.0.tar.gz && \
+sudo cp ~/Downloads/linux-amd64-1.1.0/ccat /usr/local/bin/ccat
+```
+```sh
+echo -e "alias cat='ccat'" | tee -a ~/.aliases
+```
+
   
 ---------------------------------------------------------------------  
 ---------------------------------------------------------------------  
@@ -309,7 +257,8 @@ gimp inkscape krita qbittorrent \
 flameshot kazam \
 obs-studio nomacs \
 thunderbird birdtray \
-numix-icon-theme-circle gnome-icon-theme lxappearance\
+numix-icon-theme-circle gnome-icon-theme lxappearance \
+onboard
 
 ```
 
@@ -413,16 +362,7 @@ wget -cO telegram-linux.tar.xz https://telegram.org/dl/desktop/linux
 tar -xvJf telegram-linux.tar.xz && cd Telegram
 ```
 
----------------------------------------------------------------------  
-
-## * lyrics-in-terminal
-_(https://pypi.org/project/lyrics-in-terminal)_
-
-```sh
-pip3 install lyrics-in-terminal
-```
-  
-  
+ 
 ---------------------------------------------------------------------  
 
 ## * speedtest-cli
@@ -434,23 +374,7 @@ curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
 ```sh
 sudo apt-get install speedtest
 ```
-  
----------------------------------------------------------------------  
-
-## * subliminal
-###### (subtitle downloader)
-_(https://github.com/Diaoul/subliminal)_
-
-depends on: `python` `python3-pip` `python-setuptools` `python3-setuptools` `python-wheel-common`
-
-#### installation
-```sh
-pip3 install subliminal
-```
-```sh
-echo "alias subltitle='subliminal download -l en ./' " | tee -a ~/.aliases
-```
-
+ 
 
 
 ---------------------------------------------------------------------  
@@ -473,7 +397,6 @@ sudo apt update && sudo apt install brave-browser
 ```
 
 
-
 ---------------------------------------------------------------------  
 
 
@@ -482,24 +405,6 @@ sudo apt update && sudo apt install brave-browser
 ```sh
 wget -cO discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb && \
 sudo apt install ./discord.deb
-```
-
-
-
----------------------------------------------------------------------  
-
-## * spotify
-###### (Music streaming client)
-```sh
-curl -sS https://download.spotify.com/debian/pubkey_0D811D58.gpg \
-| sudo apt-key --keyring /etc/apt/trusted.gpg.d/spotify.gpg add -
-```
-```sh
-echo "deb [trusted=yes] http://repository.spotify.com stable non-free" \
-| sudo tee /etc/apt/sources.list.d/spotify.list
-```
-```sh
-sudo apt-get update && sudo apt-get install -y spotify-client
 ```
 
 
@@ -551,3 +456,9 @@ sudo apt update && sudo apt install qt5-style-kvantum qt5-style-kvantum-themes
 
 download package from the releases page and install:
 https://github.com/vscodium/vscodium/releases
+
+---------------------------------------------------------------------  
+
+## * AppImage-Launcher
+download package from the releases page and install:
+https://github.com/TheAssassin/AppImageLauncher/releases

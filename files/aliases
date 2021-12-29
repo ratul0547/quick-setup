@@ -1,7 +1,6 @@
 
 ############ basic shortcuts ############
 alias update='sudo apt update && sudo apt upgrade'
-alias pkg='sudo apt-fast'
 alias open='xdg-open'
 alias c='clear'
 alias gitclone='cd ~/git && git clone'
@@ -14,7 +13,7 @@ alias delete='rm -rfv'
 alias rename='mv'
 
 ########### modded cp and mv ############
-alias copy='copy -gR'
+alias copy='copy -gr'
 alias move='move -g'
 
 ########### colorls shortcuts ###########
