@@ -171,7 +171,7 @@ make
 
 #### installing
 ```sh
-sudo mv ./src/cp /usr/local/bin/copy
+sudo mv ./src/cp /usr/local/bin/copy && \
 sudo mv ./src/mv /usr/local/bin/move
 ```
   
@@ -353,7 +353,7 @@ sudo apt install ./zoom_amd64.deb
 ```sh
 sudo apt install telegram-desktop
 ```
-or,
+#### or,
 
 ```sh
 wget -cO telegram-linux.tar.xz https://telegram.org/dl/desktop/linux
@@ -462,3 +462,15 @@ https://github.com/vscodium/vscodium/releases
 ## * AppImage-Launcher
 download package from the releases page and install:
 https://github.com/TheAssassin/AppImageLauncher/releases
+
+#### or via ppa
+
+```sh
+sudo add-apt-repository ppa:appimagelauncher-team/stable
+```
+```sh
+sudo apt update
+```
+```sh
+sudo apt install appimagelauncher
+```

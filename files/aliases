@@ -1,51 +1,78 @@
+export d1=/storage/drive1
+export d2=/storage/drive2
 
 ############ basic shortcuts ############
-alias update='sudo apt update && sudo apt upgrade'
+alias rm='rm -i'
+alias upgrade='sudo apt update && sudo apt upgrade && flatpak update'
+#alias update='sudo pacman -Syuv'
+#alias update='pkcon update'
+#alias pm='pkcon'
+#alias pkg='pacman'
+alias apt='sudo apt'
+alias apt-search='apt-cache search'
+alias apt-show='apt show'
 alias open='xdg-open'
 alias c='clear'
-alias gitclone='cd ~/git && git clone'
+alias gitclone='cd ~/.tmp && git clone'
 
 alias mc='. /usr/share/mc/bin/mc-wrapper.sh'
 
-alias gsu='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY'
+alias gsudo='pkexec env DISPLAY=$DISPLAY XAUTHORITY=$XAUTHORITY'
+alias gui='exec env DISPLAY=:0 XAUTHORITY=$XAUTHORITY'
 
 alias delete='rm -rfv'
-alias rename='mv'
+alias update-mlocate='echo -e "\nupdating database...\n" && sudo updatedb'
+alias update-units='units_cur -b USD'
+alias root='sudo -s'
 
 ########### modded cp and mv ############
 alias copy='copy -gr'
 alias move='move -g'
 
+############## colored cat ##############
+alias cat='ccat'
+alias less='cless'
+
+############# lsd shortcuts #############
+alias lc='lsd'
+alias l='lsd --group-dirs first'
+alias la='lsd -A --group-dirs first'
+alias ll='lsd -lA --group-dirs first'
+alias lt='lsd --group-dirs first --depth 3 --tree'
+alias lta='lsd -A --tree --depth 3 --group-dirs first'
+
 ########### colorls shortcuts ###########
-alias lc='colorls'
-alias l='colorls --sd'
-alias la='colorls -A --sd'
-alias ll='colorls -lA --sd'
-alias lt='colorls --sd --tree=2'
+# alias lc='colorls'
+# alias l='colorls --sd'
+# alias la='colorls -A --sd'
+# alias ll='colorls -lA --sd'
+# alias lt='colorls --sd --tree=2'
 
 ############ cd+ls together #############
 cdls() {cd "$@" && ls; }
 
+########### cd+lsd together #############
+cdl() {cd "$@" && lsd --group-dirs first; }
+cdla() {cd "$@" && lsd -A --group-dirs first; }
+cdll() {cd "$@" && lsd -lA --group-dirs first; }
+
 ######### cd+colorls together ###########
-cdl() {cd "$@" && colorls --sd; }
-cdla() {cd "$@" && colorls -A --sd; }
-cdll() {cd "$@" && colorls -lA --sd; }
-cdlt() {cd "$@" && colorls --sd --tree=2; }
+# cdl() {cd "$@" && colorls --sd; }
+# cdla() {cd "$@" && colorls -A --sd; }
+# cdll() {cd "$@" && colorls -lA --sd; }
 
 ########## speedtest shortcuts ##########
 alias speedtest='speedtest -A'
 alias pingtest='ping -c 20 -i .2 8.8.8.8'
-alias pingtest2='sudo ping -fc 1000 8.8.8.8'
+
+############ stats check ################
+alias batterycheck='upower -i $(upower -e | grep 'BAT')' 
 
 ######## youtube-dl shortcuts ###########
+alias dlmp3='youtube-dl -c -R 10 -x --audio-format mp3 --prefer-ffmpeg -o "%(title)s.%(ext)s"'
+alias dlmp4='youtube-dl -c -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "%(title)s.%(ext)s"'
+alias dlplist='youtube-dl -c -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" --yes-playlist --playlist-start 1 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
 alias ytdl='youtube-dl'
-alias dlmp3='youtube-dl -R 10 -x --audio-format mp3 --prefer-ffmpeg -o "%(title)s.%(ext)s"'
-alias dlmp4='youtube-dl -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" -o "%(title)s.%(ext)s"'
-alias dlplist='youtube-dl -R 10 -f "bestvideo[ext=mp4]+bestaudio[ext=m4a]/best[ext=mp4]/best" --yes-playlist --playlist-start 1 -o "%(playlist)s/%(playlist_index)s - %(title)s.%(ext)s"'
-alias vdl='youtube-dl -R 10 -o ~/Downloads/"%(title)s.%(ext)s"'
-
-######## subliminal shortcuts ###########
-alias subtitle='subliminal download -l en .'
 
 ############# weather info ##############
 forecast() {curl wttr.in/"$@"; }
@@ -56,3 +83,4 @@ forecast2() {curl v2.wttr.in/"$@"; }
 ############## moon phase ###############
 moonphase() {curl "wttr.in/Moon@'$@'?format=\nDay+of+Moon:+++%m+%M+\n\n" && curl wttr.in/Moon@"$@"; }
 
+alias termcolors='for i in {0..255}; do print -Pn "%K{$i}  %k%F{$i}${(l:3::0:)i}%f " ${${(M)$((i%6)):#3}:+$'\n'}; done'
