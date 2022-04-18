@@ -311,6 +311,15 @@ xscreensaver xscreensaver-\*
   
   
   
+## * Install Flatpak
+
+```sh
+sudo add-apt-repository ppa:flatpak/stable 
+```
+
+```sh
+flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flatpakrepo
+```
 
 ---------------------------------------------------------------------  
 ---------------------------------------------------------------------  
