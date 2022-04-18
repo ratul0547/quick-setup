@@ -482,7 +482,9 @@ _(https://github.com/Ulauncher/Ulauncher)_
 
 #### ppa
 ```sh
-sudo add-apt-repository ppa:agornostal/ulauncher && sudo apt update && sudo apt install ulauncher
+sudo add-apt-repository ppa:agornostal/ulauncher && \
+sudo apt update && \
+sudo apt install ulauncher
 ```
 
 #### or download _*.deb_ file and install
