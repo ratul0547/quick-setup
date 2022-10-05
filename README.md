@@ -498,3 +498,11 @@ sudo apt install ulauncher
 
 #### or download _*.deb_ file and install
 
+---------------------------------------------------------------------  
+
+### Optional Tweaks 
+
+##### * Fix Ghostscript policy restriction:
+```sh
+sudo sed -i '/disable ghostscript format types/,+6d' /etc/ImageMagick-6/policy.xml
+```
