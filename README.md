@@ -395,7 +395,7 @@ sudo apt-get update && sudo apt-get install mplayer smplayer smplayer-themes smp
 #### or,
 
 ```sh
-flatpak install smplayer
+flatpak install info.smplayer.SMPlayer
 ```
 
 
