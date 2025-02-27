@@ -135,7 +135,7 @@ echo -e "\nsource \$HOME/.aliases\n" | tee -a ~/.zshrc
 ```
 #### adding user dir to $PATH
 ```sh
-echo -e "\nexport PATH=\"\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
+echo -e "\nexport PATH=\"\$HOME/bin:\$HOME/.local/bin:\$PATH\"" | tee -a ~/.zshrc
 ```
 
   
