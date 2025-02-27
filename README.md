@@ -66,7 +66,7 @@ _(https://github.com/ohmyzsh/ohmyzsh)_
 #### Installing dependencies
 
 ```sh
-sudo apt install zsh curl git
+sudo apt install zsh git curl
 ```
 
 #### installing oh-my-zsh
@@ -107,19 +107,26 @@ ZSH_AUTOSUGGEST_HISTORY_IGNORE="?(#c70,)"
 ZSH_AUTOSUGGEST_COMPLETION_IGNORE="apt pip pip3"
 ```
 
-#### adding plugins
-```sh
-sed -i "s/plugins=(git)/plugins=(git\n\
-extract\n\
-sudo\n\
-history\n\
-safe-paste\n\
-python\n\
-pip\n\
-colored-man-pages\n\
-web-search\n\
-zsh-syntax-highlighting\n\
-zsh-autosuggestions)/gi" ~/.zshrc
+#### Adding plugins
+```
+plugins=(
+sudo
+extract
+magic-enter
+dirhistory
+command-not-found
+fancy-ctrl-z
+zsh-interactive-cd
+nmap
+history
+safe-paste
+colored-man-pages
+colorize
+autoenv
+zsh-syntax-highlighting
+zsh-autosuggestions
+)
+
 ```
 #### alias file 
 ###### _create a_ `~/.aliases` _file first if not created already_
@@ -191,9 +198,12 @@ tee -a ~/.aliases
 _(https://github.com/Peltoche/lsd)_
 
 ```sh
+sudo apt install lsd
+```
+#### or, if not available in repo..
+```sh
 wget -c https://github.com/Peltoche/lsd/releases/download/0.20.1/lsd_0.20.1_amd64.deb
 ```
-
 ```sh
 sudo apt install ./lsd_0.20.1_amd64.deb
 ```
@@ -271,8 +281,9 @@ build-essential dpkg-repack dkms cmake checkinstall
 #### python:
 ```sh
 sudo apt-get install \
-python2 python3 python3-pip
+python2 python3 pipx
 ```
+_(pip/pip3 not recommended anymore)_
 
 #### gtk tools
 ```sh
@@ -328,40 +339,23 @@ flatpak remote-add --if-not-exists flathub https://flathub.org/repo/flathub.flat
   
 ## * youtube-dl
 ###### (youtube downloader)
-_(https://youtube-dl.org)_
-  
-#### direct installation
+#### via pipx
 ```sh
-sudo curl -L https://yt-dl.org/downloads/latest/youtube-dl -o /usr/local/bin/youtube-dl
-```
-```sh
-sudo chmod a+rx /usr/local/bin/youtube-dl
-```
-
-  
-#### or, via pip
-```sh
-pip3 install --upgrade youtube_dl
-```
-
-
----------------------------------------------------------------------  
-
-## * zoom
-###### (video meeting client)
-```sh
-wget -cO zoom_amd64.deb https://zoom.us/client/latest/zoom_amd64.deb && \
-sudo apt install ./zoom_amd64.deb
+pipx install --upgrade yt-dlp
 ```
 
 ---------------------------------------------------------------------  
-
 
 ### * telegram
 
 ```sh
 sudo apt install telegram-desktop
 ```
+#### or,
+```sh
+flatpak install org.telegram.desktop
+```
+
 #### or,
 
 ```sh
@@ -383,40 +377,10 @@ curl -s https://install.speedtest.net/app/cli/install.deb.sh | sudo bash
 ```sh
 sudo apt-get install speedtest
 ```
- 
-
-
----------------------------------------------------------------------  
-
-## * brave-browser
-
-```sh
-sudo apt install apt-transport-https curl gnupg
+ #### or,
+ ```sh
+pipx install speedtest-cli
 ```
-```sh
-curl -s https://brave-browser-apt-release.s3.brave.com/brave-core.asc \
-| sudo apt-key --keyring /etc/apt/trusted.gpg.d/brave-browser-release.gpg add -
-```
-```sh
-echo "deb [arch=amd64] https://brave-browser-apt-release.s3.brave.com/ stable main" \
-| sudo tee /etc/apt/sources.list.d/brave-browser-release.list
-```
-```sh
-sudo apt update && sudo apt install brave-browser
-```
-
-
----------------------------------------------------------------------  
-
-
-## * discord
-###### (Online chat and communication client)
-```sh
-wget -cO discord.deb https://discord.com/api/download\?platform\=linux\&format\=deb && \
-sudo apt install ./discord.deb
-```
-
-
 
 ---------------------------------------------------------------------  
 
@@ -428,25 +392,13 @@ sudo add-apt-repository ppa:rvm/smplayer
 ```sh
 sudo apt-get update && sudo apt-get install mplayer smplayer smplayer-themes smplayer-skins
 ```
+#### or,
 
-
-
----------------------------------------------------------------------  
-
-## * anydesk
-###### (remote desktop sharing and control)
 ```sh
-wget -qO - https://keys.anydesk.com/repos/DEB-GPG-KEY | sudo apt-key add -
+flatpak install smplayer
 ```
-```sh
-echo "deb http://deb.anydesk.com/ all main" \
-| sudo tee /etc/apt/sources.list.d/anydesk-stable.list
-```
-```sh
-sudo apt update && sudo apt install anydesk
-```
-  
-  
+
+
 ---------------------------------------------------------------------  
 
 ### * kvantum theme engine
