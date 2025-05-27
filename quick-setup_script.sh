@@ -11,6 +11,7 @@ fi
 
 TITLE="Quick Setup for Ubuntu"
 # Create aliases file
+cat > ~/.aliases <<'EOF'
 ############ basic shortcuts ############
 alias rm='rm -i'
 alias upgrade='sudo apt update && sudo apt upgrade && flatpak update'
@@ -144,11 +145,11 @@ essential_packages_menu() {
     clear
     for choice in $choices; do
         case $choice in
-            1) select_packages "basic" ;;
-            2) select_packages "build" ;;
-            3) select_packages "python" ;;
-            4) install_flatpak ;;
-            5) remove_snap ;;
+            1) install_flatpak ;;
+            2) remove_snap ;;
+            3) select_packages "basic" ;;
+            4) select_packages "build" ;;
+            5) select_packages "python" ;;
             6) select_packages "gtk" ;;
             7) select_packages "kde" ;;
             8) select_packages "cli" ;;
