@@ -179,7 +179,7 @@ system_tweaks_menu() {
             0)
                 case "$choice" in
                     1) sudo_configure_menu ;;
-                    2) sudo timedatectl set-local-rtc 1 --adjust-system-clock
+                    2) fix_clock_menu ;;
                        dialog --msgbox "Clock fixed for dual boot.\n\nPress Enter to continue..." 9 40 ;;
                     3) echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
                        dialog --msgbox "Swappiness set to 10.\n\nPress Enter to continue..." 9 30 ;;
@@ -202,7 +202,41 @@ system_tweaks_menu() {
         esac
     done
 }
+fix_clock_menu() {
+    # Detect current RTC setting
+    if timedatectl show | grep -q '^RTCInLocalTZ=yes'; then
+        current="local"
+    else
+        current="utc"
+    fi
 
+    # Prepare menu options with asterisk for current
+    opt1="UTC"
+    opt2="Local"
+    [ "$current" = "utc" ] && opt1="UTC *"
+    [ "$current" = "local" ] && opt2="Local *"
+
+    dialog --clear --title "Fix System clock for dual boot" --menu "Select RTC time mode:" 12 50 2 \
+        1 "$opt1" \
+        2 "$opt2" \
+        2>menu.tmp
+    status=$?
+    choice=$(<menu.tmp)
+    rm -f menu.tmp
+    clear
+    if [ "$status" -ne 0 ]; then return; fi
+
+    case "$choice" in
+        1)
+            sudo timedatectl set-local-rtc 0 --adjust-system-clock
+            dialog --msgbox "RTC is now set to UTC.\n\nPress Enter to continue..." 9 40
+            ;;
+        2)
+            sudo timedatectl set-local-rtc 1 --adjust-system-clock
+            dialog --msgbox "RTC is now set to Local Time.\n\nPress Enter to continue..." 9 40
+            ;;
+    esac
+}
 sudo_configure_menu() {
     while true; do
         dialog --clear --title "Configure sudo" --cancel-label "Back" --menu "Select sudo configuration option:" 14 60 6 \
