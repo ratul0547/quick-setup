@@ -77,7 +77,7 @@ zsh_theme_plugins() {
             git clone --depth=1 "https://github.com/$repo.git" "$dest"
         fi
     done
-    sed -i '/^plugins=/c\plugins=(sudo extract magic-enter dirhistory command-not-found fancy-ctrl-z history safe-paste colored-man-pages colorize zsh-completions fzf-tab fast-syntax-highlighting zsh-autocomplete zsh-autopair zsh-autosuggestions)' ~/.zshrc || true
+    sed -i '/^plugins=/c\plugins=(sudo extract magic-enter dirhistory command-not-found fancy-ctrl-z history safe-paste colored-man-pages colorize zsh-completions fzf-tab fast-syntax-highlighting zsh-autosuggestions zsh-syntax-highlighting zsh-autopair zsh-autocomplete)' ~/.zshrc || true
 
     dialog --msgbox "ZSH plugins and theme installed. Please restart your terminal.\n\nPress Enter to continue..." 9 60
 }
@@ -132,6 +132,42 @@ done
     dialog --msgbox "Aliases configured and sourced in bashrc/zshrc.\n\nPress Enter to continue..." 9 50
 }
 
+fix_clock_menu() {
+    # Detect current RTC setting
+    if timedatectl show | grep -q '^RTCInLocalTZ=yes'; then
+        current="local"
+    else
+        current="utc"
+    fi
+
+    # Prepare menu options with asterisk for current
+    opt1="UTC"
+    opt2="Local"
+    [ "$current" = "utc" ] && opt1="UTC *"
+    [ "$current" = "local" ] && opt2="Local *"
+
+    dialog --clear --title "Fix System clock for dual boot" --menu "Select RTC time mode:" 12 50 2 \
+        1 "$opt1" \
+        2 "$opt2" \
+        2>menu.tmp
+    status=$?
+    choice=$(<menu.tmp)
+    rm -f menu.tmp
+    clear
+    if [ "$status" -ne 0 ]; then return; fi
+
+    case "$choice" in
+        1)
+            sudo timedatectl set-local-rtc 0 --adjust-system-clock
+            dialog --msgbox "RTC is now set to UTC.\n\nPress Enter to continue..." 9 40
+            ;;
+        2)
+            sudo timedatectl set-local-rtc 1 --adjust-system-clock
+            dialog --msgbox "RTC is now set to Local Time.\n\nPress Enter to continue..." 9 40
+            ;;
+    esac
+}
+
 system_tweaks_menu() {
     while true; do
         dialog --clear --title "System Tweaks" --cancel-label "Back" --menu "Select a tweak:" 14 60 6 \
@@ -146,8 +182,7 @@ system_tweaks_menu() {
         case $status in
             0)
                 case "$choice" in
-                    1) sudo timedatectl set-local-rtc 1 --adjust-system-clock
-                       dialog --msgbox "Clock fixed for dual boot.\n\nPress Enter to continue..." 9 40 ;;
+                    1) fix_clock_menu ;;
                     2) echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
                        dialog --msgbox "Swappiness set to 10.\n\nPress Enter to continue..." 9 30 ;;
                     3)
@@ -171,11 +206,11 @@ system_tweaks_menu() {
 }
 
 declare -A PKG_GROUPS=(
-    [basic]="ubuntu-restricted-extras ubuntu-restricted-addons fonts-powerline ttf-mscorefonts-installer fonts-firacode xdg-utils ntfs-3g grub-customizer adb fastboot scrcpy openvpn m17n-db ibus-m17n goldendict gimp inkscape krita qbittorrent flameshot kazam obs-studio nomacs thunderbird numix-icon-theme-circle lxappearance onboard vlc pinta synaptic apt-xapian-index gparted catfish keepassxc arc-theme xscreensaver lsd"
-    [cli]="testdisk mc upower ffmpeg elinks screen byobu openssh-server openssh-client htop btop inxi neofetch whois vnstat iftop dnstop bmon nmap bat fim units imagemagick ghostscript mlocate ncdu fzf fd-find libsecret-tools"
+    [basic]="ubuntu-restricted-extras ubuntu-restricted-addons fonts-powerline ttf-mscorefonts-installer fonts-firacode xdg-utils ntfs-3g grub-customizer adb fastboot scrcpy openvpn m17n-db ibus-m17n"
+    [cli]="testdisk mc upower ffmpeg elinks screen byobu openssh-server openssh-client htop btop inxi neofetch whois vnstat iftop dnstop bmon nmap bat fim units imagemagick ghostscript mlocate ncdu fzf"
     [fun]="supertuxkart supertux minetest figlet boxes cmatrix toilet sl cowsay lolcat fortune fortune-mod"
     [gnome]="network-manager-gnome gnome-keyring gnome-disk-utility seahorse"
-    [kde]="qapt-deb-installer yakuake xdg-desktop-portal-gtk xdg-desktop-portal-kde muon krfb redshift filelight latte-dock falkon okular ksysguard dolphin konsole qt5-style-kvantum qt5-style-kvantum-themes"
+    [kde]="qapt-deb-installer yakuake xdg-desktop-portal-gtk xdg-desktop-portal-kde muon krfb redshift filelight latte-dock falkon okular ksysguard dolphin konsole qt5-style-kvantum qt5-style-kvantum"
     [development]="build-essential dpkg-repack dkms cmake checkinstall"
 )
 
@@ -407,7 +442,7 @@ EOF
 }
 
 firefox_no_snap_patch() {
-    dialog --yesno "This will remove all Snap and Ubuntu repo versions of Firefox, block their reinstallation, add the Mozilla Team PPA, and install the latest DEB version of Firefox with proper update priorities and unattended upgrades.\n\nProceed?" 13 70
+    dialog --yesno "This will remove all Snap and Ubuntu repo versions of Firefox, block their reinstallation, add the Mozilla Team PPA, and install the latest DEB version of Firefox with proper updates. Continue?" 8 70
     if [ $? -ne 0 ]; then
         dialog --msgbox "Firefox no-snap patch aborted." 7 40
         return
@@ -441,7 +476,7 @@ Pin: release o=LP-PPA-mozillateam
 Pin-Priority: 501
 EOF
 
-    dialog --msgbox "Firefox no-snap patch applied:\n- Ubuntu repo and Snap Firefox blocked\n- Mozilla PPA enabled and prioritized\n- Latest Firefox DEB installed and set for auto-updates.\n\nYou may use Firefox as usual from your app menu." 14 70
+    dialog --msgbox "Firefox no-snap patch applied:\n- Ubuntu repo and Snap Firefox blocked\n- Mozilla PPA enabled and prioritized\n- Latest Firefox DEB installed and set for auto-updates.\n\nYou may need to re-login for all changes to take effect." 12 70
 }
 
 restore_gnome_software() {
