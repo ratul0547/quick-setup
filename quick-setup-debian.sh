@@ -180,7 +180,6 @@ system_tweaks_menu() {
                 case "$choice" in
                     1) sudo_configure_menu ;;
                     2) fix_clock_menu ;;
-                       dialog --msgbox "Clock fixed for dual boot.\n\nPress Enter to continue..." 9 40 ;;
                     3) echo "vm.swappiness=10" | sudo tee -a /etc/sysctl.conf
                        dialog --msgbox "Swappiness set to 10.\n\nPress Enter to continue..." 9 30 ;;
                     4)
