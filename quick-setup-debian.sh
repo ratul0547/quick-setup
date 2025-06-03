@@ -467,7 +467,6 @@ optional_software_mgmt_menu() {
         dialog --clear --title "Optional Software Management" --cancel-label "Back" --menu "Select an option:" 14 70 6 \
             1 "Setup Flatpak" \
             2 "Install pipx" \
-            3 "Remove snap" \
             2>menu.tmp
         status=$?
         choice=$(<menu.tmp)
@@ -478,7 +477,6 @@ optional_software_mgmt_menu() {
                 case "$choice" in
                     1) flatpak_menu ;;
                     2) install_pipx ;;
-                    3) remove_snap ;;
                 esac
                 ;;
             1|255) return ;;
@@ -525,26 +523,6 @@ install_pipx() {
         sudo apt-get install -y pipx
     fi
     dialog --msgbox "pipx is installed.\n\nPress Enter to continue..." 8 30
-}
-
-remove_snap() {
-    if ! command -v snap &>/dev/null && ! dpkg -s snapd &>/dev/null; then
-        dialog --msgbox "Snap is not installed.\n\nPress Enter to continue..." 8 30
-        return
-    fi
-    dialog --yesno "Snap is installed. Remove snap and all snap packages?" 8 60
-    if [ $? -eq 0 ]; then
-        if command -v snap &>/dev/null; then
-            for snap in $(snap list | awk 'NR>1 {print $1}'); do
-                sudo snap remove --purge "$snap"
-            done
-        fi
-        sudo systemctl stop snapd 2>/dev/null || true
-        sudo apt-get purge -y snapd
-        sudo apt-get autoremove -y
-        sudo rm -rf ~/snap /snap /var/snap /var/lib/snapd /var/cache/snapd
-        dialog --msgbox "Snap and all snap packages removed.\n\nPress Enter to continue..." 9 50
-    fi
 }
 
 while true; do
